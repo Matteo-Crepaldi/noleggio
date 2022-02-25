@@ -10,10 +10,12 @@ namespace noleggio_DLL
     {
         public string Nome { get; }
         public List<Veicolo> Veicoli { get; }
+        public List<Cliente> Clienti { get; }
 
         public CentroNoleggio(string nome)
         {
             Nome = nome;
+            Clienti = new List<Cliente>();
         }
     }
 }

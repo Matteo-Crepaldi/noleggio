@@ -35,6 +35,13 @@ namespace noleggio_DLL
             Noleggi.Add(n);
             Impegnato = true;
         }
+
+        public void Noleggia(DateTime d)
+        {
+            Noleggio n = new Noleggio(d);
+            Noleggi.Add(n);
+            Impegnato = true;
+        }
     }
 
     public class Automobile : Veicolo
