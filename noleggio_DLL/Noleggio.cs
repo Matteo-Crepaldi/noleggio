@@ -8,18 +8,20 @@ namespace noleggio_DLL
 {
     public class Noleggio
     {
-        public int Identificativo { get; }
+        public int ID { get; }
         public DateTime DataInizio { get; }
+        public int NumGiorni { get; }
+        public double Costo { get; }
 
         public Noleggio(DateTime data)
         {
-            Identificativo = GeneraID();
+            ID = GeneraID();
             DataInizio = data;
         }
 
         public Noleggio()
         {
-            Identificativo = GeneraID();
+            ID = GeneraID();
             DataInizio = DateTime.Now;
         }
 

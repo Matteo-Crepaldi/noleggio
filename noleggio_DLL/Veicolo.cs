@@ -10,11 +10,12 @@ namespace noleggio_DLL
     {
         public string Targa { get; } 
         public string Modello { get; }
-        public int Tariffa { get; }
+        public string Tipo { get; }
+        public double Tariffa { get; }
         private bool Impegnato { get; set; }
         public List<Noleggio> Noleggi { get; }
 
-        protected Veicolo(string targa, string modello, int tariffa) 
+        protected Veicolo(string targa, string modello, double tariffa) 
         {
             Targa = targa;
             Modello = modello;
@@ -56,11 +57,11 @@ namespace noleggio_DLL
 
     public class Furgone : Veicolo
     {
-        public int CaricoMassimo { get; }
+        public int Capacita { get; }
 
-        public Furgone(string targa, string modello, int tariffa, int caricoMassimo) : base(targa, modello, tariffa)
+        public Furgone(string targa, string modello, int tariffa, int capacita) : base(targa, modello, tariffa)
         {
-            CaricoMassimo = caricoMassimo;
+            Capacita = capacita;
         }
     }
 }

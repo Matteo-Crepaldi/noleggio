@@ -18,5 +18,10 @@ namespace noleggio_DLL
             Cognome = cognome;
             CodiceFiscale = codiceFiscale;
         }
+
+        public string GetInfo()
+        {
+            return $"{Nome};{Cognome};{CodiceFiscale}";
+        }
     }
 }
