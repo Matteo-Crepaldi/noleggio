@@ -6,4 +6,8 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\noleggio_DLL\noleggio_DLL.csproj" />
+  </ItemGroup>
+
 </Project>
