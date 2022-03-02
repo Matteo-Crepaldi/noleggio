@@ -221,7 +221,7 @@ namespace noleggio
             this.Controls.Add(this.btnSalva);
             this.Name = "FormVeicolo1";
             this.Text = "Veicolo";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.FormVeicolo1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

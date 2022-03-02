@@ -122,6 +122,7 @@ namespace noleggio
             this.Controls.Add(this.lblNomeCliente);
             this.Name = "FormCliente";
             this.Text = "Cliente";
+            this.Load += new System.EventHandler(this.FormCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

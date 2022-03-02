@@ -13,13 +13,18 @@ namespace noleggio
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnSalva_Click(object sender, EventArgs e)
         {
+            if (rbAutomobile.Checked != false && true) { MessageBox.Show("Error,Seleziona un radioButton"); }
+
+            if (rbFurgone.Checked != false && true) { MessageBox.Show("Error,Seleziona un radioButton"); }
+
+            if (txtTargaA.Text == "" || txtTariffaAF.Text == "" || txtModelloA.Text == "" || txtnumPostiA.Text == "" || txtCapacitàF.Text == "")
+            {
+                MessageBox.Show("le textBox sono vuote");
+            }
+
             if (rbAutomobile.Checked == true)
             {
                 Automobile a = new Automobile(txtTargaA.Text, txtModelloA.Text, Convert.ToInt32(txtTariffaAF.Text), Convert.ToInt32(txtnumPostiA.Text));
@@ -30,7 +35,6 @@ namespace noleggio
                 Furgone f = new Furgone(txtTargaA.Text, txtModelloA.Text, Convert.ToInt32(txtTariffaAF.Text), Convert.ToInt32(txtCapacitàF.Text));
                 cn.AddVeicolo(f);
             }
-
             Close();
         }
 
@@ -54,6 +58,11 @@ namespace noleggio
                 lblCapacitàFurgone.Visible = true;
                 txtCapacitàF.Visible = true;
             }
+        }
+
+        private void FormVeicolo1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

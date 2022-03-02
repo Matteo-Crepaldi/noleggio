@@ -41,7 +41,7 @@ namespace noleggio
             // 
             this.btnLogInCliente.BackColor = System.Drawing.Color.White;
             this.btnLogInCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLogInCliente.Location = new System.Drawing.Point(12, 12);
+            this.btnLogInCliente.Location = new System.Drawing.Point(12, 40);
             this.btnLogInCliente.Name = "btnLogInCliente";
             this.btnLogInCliente.Size = new System.Drawing.Size(186, 54);
             this.btnLogInCliente.TabIndex = 1;
@@ -53,9 +53,9 @@ namespace noleggio
             // 
             this.btnEffettuaNoleggio.BackColor = System.Drawing.Color.White;
             this.btnEffettuaNoleggio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEffettuaNoleggio.Location = new System.Drawing.Point(12, 238);
+            this.btnEffettuaNoleggio.Location = new System.Drawing.Point(12, 239);
             this.btnEffettuaNoleggio.Name = "btnEffettuaNoleggio";
-            this.btnEffettuaNoleggio.Size = new System.Drawing.Size(186, 70);
+            this.btnEffettuaNoleggio.Size = new System.Drawing.Size(186, 75);
             this.btnEffettuaNoleggio.TabIndex = 2;
             this.btnEffettuaNoleggio.Text = "Effettua Noleggio";
             this.btnEffettuaNoleggio.UseVisualStyleBackColor = false;
@@ -68,16 +68,16 @@ namespace noleggio
             this.lstListaDeiClienti.ItemHeight = 28;
             this.lstListaDeiClienti.Location = new System.Drawing.Point(332, 12);
             this.lstListaDeiClienti.Name = "lstListaDeiClienti";
-            this.lstListaDeiClienti.Size = new System.Drawing.Size(273, 256);
+            this.lstListaDeiClienti.Size = new System.Drawing.Size(273, 340);
             this.lstListaDeiClienti.TabIndex = 3;
             // 
             // btnAggiorna
             // 
             this.btnAggiorna.BackColor = System.Drawing.Color.White;
             this.btnAggiorna.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAggiorna.Location = new System.Drawing.Point(548, 288);
+            this.btnAggiorna.Location = new System.Drawing.Point(523, 365);
             this.btnAggiorna.Name = "btnAggiorna";
-            this.btnAggiorna.Size = new System.Drawing.Size(137, 47);
+            this.btnAggiorna.Size = new System.Drawing.Size(186, 54);
             this.btnAggiorna.TabIndex = 4;
             this.btnAggiorna.Text = "Aggiorna";
             this.btnAggiorna.UseVisualStyleBackColor = false;
@@ -89,7 +89,7 @@ namespace noleggio
             this.btnCreaVeicolo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCreaVeicolo.Location = new System.Drawing.Point(12, 114);
             this.btnCreaVeicolo.Name = "btnCreaVeicolo";
-            this.btnCreaVeicolo.Size = new System.Drawing.Size(186, 70);
+            this.btnCreaVeicolo.Size = new System.Drawing.Size(186, 54);
             this.btnCreaVeicolo.TabIndex = 5;
             this.btnCreaVeicolo.Text = "Crea Veicolo";
             this.btnCreaVeicolo.UseVisualStyleBackColor = false;
@@ -102,7 +102,7 @@ namespace noleggio
             this.lstListaDeiVeicoli.ItemHeight = 28;
             this.lstListaDeiVeicoli.Location = new System.Drawing.Point(635, 12);
             this.lstListaDeiVeicoli.Name = "lstListaDeiVeicoli";
-            this.lstListaDeiVeicoli.Size = new System.Drawing.Size(267, 256);
+            this.lstListaDeiVeicoli.Size = new System.Drawing.Size(267, 340);
             this.lstListaDeiVeicoli.TabIndex = 6;
             // 
             // FormCentroNoleggio
@@ -110,7 +110,7 @@ namespace noleggio
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(914, 396);
+            this.ClientSize = new System.Drawing.Size(914, 431);
             this.Controls.Add(this.lstListaDeiVeicoli);
             this.Controls.Add(this.btnCreaVeicolo);
             this.Controls.Add(this.btnAggiorna);
