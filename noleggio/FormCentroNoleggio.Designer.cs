@@ -35,15 +35,16 @@ namespace noleggio
             this.btnAggiorna = new System.Windows.Forms.Button();
             this.btnCreaVeicolo = new System.Windows.Forms.Button();
             this.lstListaDeiVeicoli = new System.Windows.Forms.ListBox();
+            this.lstNoleggiEffettuati = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnLogInCliente
             // 
             this.btnLogInCliente.BackColor = System.Drawing.Color.White;
             this.btnLogInCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLogInCliente.Location = new System.Drawing.Point(12, 40);
+            this.btnLogInCliente.Location = new System.Drawing.Point(11, 40);
             this.btnLogInCliente.Name = "btnLogInCliente";
-            this.btnLogInCliente.Size = new System.Drawing.Size(186, 54);
+            this.btnLogInCliente.Size = new System.Drawing.Size(186, 53);
             this.btnLogInCliente.TabIndex = 1;
             this.btnLogInCliente.Text = "Crea il Cliente";
             this.btnLogInCliente.UseVisualStyleBackColor = false;
@@ -52,10 +53,10 @@ namespace noleggio
             // btnEffettuaNoleggio
             // 
             this.btnEffettuaNoleggio.BackColor = System.Drawing.Color.White;
-            this.btnEffettuaNoleggio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEffettuaNoleggio.Location = new System.Drawing.Point(12, 239);
+            this.btnEffettuaNoleggio.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEffettuaNoleggio.Location = new System.Drawing.Point(11, 203);
             this.btnEffettuaNoleggio.Name = "btnEffettuaNoleggio";
-            this.btnEffettuaNoleggio.Size = new System.Drawing.Size(186, 75);
+            this.btnEffettuaNoleggio.Size = new System.Drawing.Size(186, 58);
             this.btnEffettuaNoleggio.TabIndex = 2;
             this.btnEffettuaNoleggio.Text = "Effettua Noleggio";
             this.btnEffettuaNoleggio.UseVisualStyleBackColor = false;
@@ -66,7 +67,7 @@ namespace noleggio
             this.lstListaDeiClienti.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lstListaDeiClienti.FormattingEnabled = true;
             this.lstListaDeiClienti.ItemHeight = 28;
-            this.lstListaDeiClienti.Location = new System.Drawing.Point(332, 12);
+            this.lstListaDeiClienti.Location = new System.Drawing.Point(331, 12);
             this.lstListaDeiClienti.Name = "lstListaDeiClienti";
             this.lstListaDeiClienti.Size = new System.Drawing.Size(273, 340);
             this.lstListaDeiClienti.TabIndex = 3;
@@ -75,9 +76,9 @@ namespace noleggio
             // 
             this.btnAggiorna.BackColor = System.Drawing.Color.White;
             this.btnAggiorna.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAggiorna.Location = new System.Drawing.Point(523, 365);
+            this.btnAggiorna.Location = new System.Drawing.Point(682, 363);
             this.btnAggiorna.Name = "btnAggiorna";
-            this.btnAggiorna.Size = new System.Drawing.Size(186, 54);
+            this.btnAggiorna.Size = new System.Drawing.Size(186, 53);
             this.btnAggiorna.TabIndex = 4;
             this.btnAggiorna.Text = "Aggiorna";
             this.btnAggiorna.UseVisualStyleBackColor = false;
@@ -87,9 +88,9 @@ namespace noleggio
             // 
             this.btnCreaVeicolo.BackColor = System.Drawing.Color.White;
             this.btnCreaVeicolo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCreaVeicolo.Location = new System.Drawing.Point(12, 114);
+            this.btnCreaVeicolo.Location = new System.Drawing.Point(11, 115);
             this.btnCreaVeicolo.Name = "btnCreaVeicolo";
-            this.btnCreaVeicolo.Size = new System.Drawing.Size(186, 54);
+            this.btnCreaVeicolo.Size = new System.Drawing.Size(186, 53);
             this.btnCreaVeicolo.TabIndex = 5;
             this.btnCreaVeicolo.Text = "Crea Veicolo";
             this.btnCreaVeicolo.UseVisualStyleBackColor = false;
@@ -105,12 +106,23 @@ namespace noleggio
             this.lstListaDeiVeicoli.Size = new System.Drawing.Size(267, 340);
             this.lstListaDeiVeicoli.TabIndex = 6;
             // 
+            // lstNoleggiEffettuati
+            // 
+            this.lstNoleggiEffettuati.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lstNoleggiEffettuati.FormattingEnabled = true;
+            this.lstNoleggiEffettuati.ItemHeight = 28;
+            this.lstNoleggiEffettuati.Location = new System.Drawing.Point(935, 15);
+            this.lstNoleggiEffettuati.Name = "lstNoleggiEffettuati";
+            this.lstNoleggiEffettuati.Size = new System.Drawing.Size(267, 340);
+            this.lstNoleggiEffettuati.TabIndex = 7;
+            // 
             // FormCentroNoleggio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(914, 431);
+            this.BackColor = System.Drawing.Color.Gray;
+            this.ClientSize = new System.Drawing.Size(1241, 431);
+            this.Controls.Add(this.lstNoleggiEffettuati);
             this.Controls.Add(this.lstListaDeiVeicoli);
             this.Controls.Add(this.btnCreaVeicolo);
             this.Controls.Add(this.btnAggiorna);
@@ -119,6 +131,7 @@ namespace noleggio
             this.Controls.Add(this.btnLogInCliente);
             this.Name = "FormCentroNoleggio";
             this.Text = "Centro Noleggio";
+            this.Load += new System.EventHandler(this.FormCentroNoleggio_Load);
             this.ResumeLayout(false);
 
         }
@@ -130,6 +143,7 @@ namespace noleggio
         private System.Windows.Forms.Button btnAggiorna;
         private System.Windows.Forms.Button btnCreaVeicolo;
         private System.Windows.Forms.ListBox lstListaDeiVeicoli;
+        private System.Windows.Forms.ListBox lstNoleggiEffettuati;
     }
 }
 

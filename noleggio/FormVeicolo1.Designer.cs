@@ -29,7 +29,7 @@ namespace noleggio
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSalva = new System.Windows.Forms.Button();
+            this.btnSalvaVeicolo = new System.Windows.Forms.Button();
             this.lblTargaVeicolo = new System.Windows.Forms.Label();
             this.lblModelloVeicolo = new System.Windows.Forms.Label();
             this.txtTargaA = new System.Windows.Forms.TextBox();
@@ -43,86 +43,92 @@ namespace noleggio
             this.txtTariffaAF = new System.Windows.Forms.TextBox();
             this.rbAutomobile = new System.Windows.Forms.RadioButton();
             this.rbFurgone = new System.Windows.Forms.RadioButton();
+            this.btnAnnullaVeicolo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnSalva
+            // btnSalvaVeicolo
             // 
-            this.btnSalva.BackColor = System.Drawing.Color.White;
-            this.btnSalva.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSalva.Location = new System.Drawing.Point(138, 495);
-            this.btnSalva.Name = "btnSalva";
-            this.btnSalva.Size = new System.Drawing.Size(198, 102);
-            this.btnSalva.TabIndex = 8;
-            this.btnSalva.Text = "Salva";
-            this.btnSalva.UseVisualStyleBackColor = false;
-            this.btnSalva.Click += new System.EventHandler(this.btnSalva_Click);
+            this.btnSalvaVeicolo.BackColor = System.Drawing.Color.White;
+            this.btnSalvaVeicolo.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSalvaVeicolo.Location = new System.Drawing.Point(68, 390);
+            this.btnSalvaVeicolo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSalvaVeicolo.Name = "btnSalvaVeicolo";
+            this.btnSalvaVeicolo.Size = new System.Drawing.Size(115, 46);
+            this.btnSalvaVeicolo.TabIndex = 8;
+            this.btnSalvaVeicolo.Text = "Salva";
+            this.btnSalvaVeicolo.UseVisualStyleBackColor = false;
+            this.btnSalvaVeicolo.Click += new System.EventHandler(this.btnSalva_Click);
             // 
             // lblTargaVeicolo
             // 
             this.lblTargaVeicolo.AutoSize = true;
-            this.lblTargaVeicolo.BackColor = System.Drawing.Color.Black;
+            this.lblTargaVeicolo.BackColor = System.Drawing.Color.Gray;
             this.lblTargaVeicolo.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTargaVeicolo.ForeColor = System.Drawing.Color.White;
-            this.lblTargaVeicolo.Location = new System.Drawing.Point(12, 37);
+            this.lblTargaVeicolo.Location = new System.Drawing.Point(10, 26);
             this.lblTargaVeicolo.Name = "lblTargaVeicolo";
-            this.lblTargaVeicolo.Size = new System.Drawing.Size(89, 38);
+            this.lblTargaVeicolo.Size = new System.Drawing.Size(71, 30);
             this.lblTargaVeicolo.TabIndex = 9;
             this.lblTargaVeicolo.Text = "Targa";
             // 
             // lblModelloVeicolo
             // 
             this.lblModelloVeicolo.AutoSize = true;
-            this.lblModelloVeicolo.BackColor = System.Drawing.Color.Black;
+            this.lblModelloVeicolo.BackColor = System.Drawing.Color.Gray;
             this.lblModelloVeicolo.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblModelloVeicolo.ForeColor = System.Drawing.Color.White;
-            this.lblModelloVeicolo.Location = new System.Drawing.Point(293, 37);
+            this.lblModelloVeicolo.Location = new System.Drawing.Point(256, 28);
             this.lblModelloVeicolo.Name = "lblModelloVeicolo";
-            this.lblModelloVeicolo.Size = new System.Drawing.Size(126, 38);
+            this.lblModelloVeicolo.Size = new System.Drawing.Size(98, 30);
             this.lblModelloVeicolo.TabIndex = 10;
             this.lblModelloVeicolo.Text = "Modello";
             // 
             // txtTargaA
             // 
             this.txtTargaA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtTargaA.Location = new System.Drawing.Point(12, 78);
+            this.txtTargaA.Location = new System.Drawing.Point(10, 58);
+            this.txtTargaA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTargaA.Name = "txtTargaA";
-            this.txtTargaA.Size = new System.Drawing.Size(178, 34);
+            this.txtTargaA.Size = new System.Drawing.Size(156, 29);
             this.txtTargaA.TabIndex = 11;
             // 
             // txtModelloA
             // 
             this.txtModelloA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtModelloA.Location = new System.Drawing.Point(293, 78);
+            this.txtModelloA.Location = new System.Drawing.Point(256, 58);
+            this.txtModelloA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtModelloA.Name = "txtModelloA";
-            this.txtModelloA.Size = new System.Drawing.Size(178, 34);
+            this.txtModelloA.Size = new System.Drawing.Size(156, 29);
             this.txtModelloA.TabIndex = 12;
             // 
             // txtnumPostiA
             // 
             this.txtnumPostiA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtnumPostiA.Location = new System.Drawing.Point(12, 422);
+            this.txtnumPostiA.Location = new System.Drawing.Point(10, 316);
+            this.txtnumPostiA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtnumPostiA.Name = "txtnumPostiA";
-            this.txtnumPostiA.Size = new System.Drawing.Size(197, 34);
+            this.txtnumPostiA.Size = new System.Drawing.Size(173, 29);
             this.txtnumPostiA.TabIndex = 13;
             // 
             // txtCapacitàF
             // 
             this.txtCapacitàF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtCapacitàF.Location = new System.Drawing.Point(274, 422);
+            this.txtCapacitàF.Location = new System.Drawing.Point(240, 316);
+            this.txtCapacitàF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCapacitàF.Name = "txtCapacitàF";
-            this.txtCapacitàF.Size = new System.Drawing.Size(178, 34);
+            this.txtCapacitàF.Size = new System.Drawing.Size(156, 29);
             this.txtCapacitàF.TabIndex = 14;
             this.txtCapacitàF.Visible = false;
             // 
             // lblnumPostiAutomobile
             // 
             this.lblnumPostiAutomobile.AutoSize = true;
-            this.lblnumPostiAutomobile.BackColor = System.Drawing.Color.Black;
+            this.lblnumPostiAutomobile.BackColor = System.Drawing.Color.Gray;
             this.lblnumPostiAutomobile.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblnumPostiAutomobile.ForeColor = System.Drawing.Color.White;
-            this.lblnumPostiAutomobile.Location = new System.Drawing.Point(12, 372);
+            this.lblnumPostiAutomobile.Location = new System.Drawing.Point(10, 279);
             this.lblnumPostiAutomobile.Name = "lblnumPostiAutomobile";
-            this.lblnumPostiAutomobile.Size = new System.Drawing.Size(197, 38);
+            this.lblnumPostiAutomobile.Size = new System.Drawing.Size(154, 30);
             this.lblnumPostiAutomobile.TabIndex = 15;
             this.lblnumPostiAutomobile.Text = "Numero Posti";
             this.lblnumPostiAutomobile.UseMnemonic = false;
@@ -131,12 +137,12 @@ namespace noleggio
             // lblCapacitàFurgone
             // 
             this.lblCapacitàFurgone.AutoSize = true;
-            this.lblCapacitàFurgone.BackColor = System.Drawing.Color.Black;
+            this.lblCapacitàFurgone.BackColor = System.Drawing.Color.Gray;
             this.lblCapacitàFurgone.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCapacitàFurgone.ForeColor = System.Drawing.Color.White;
-            this.lblCapacitàFurgone.Location = new System.Drawing.Point(274, 372);
+            this.lblCapacitàFurgone.Location = new System.Drawing.Point(240, 279);
             this.lblCapacitàFurgone.Name = "lblCapacitàFurgone";
-            this.lblCapacitàFurgone.Size = new System.Drawing.Size(128, 38);
+            this.lblCapacitàFurgone.Size = new System.Drawing.Size(103, 30);
             this.lblCapacitàFurgone.TabIndex = 16;
             this.lblCapacitàFurgone.Text = "Capacità";
             this.lblCapacitàFurgone.Visible = false;
@@ -144,33 +150,34 @@ namespace noleggio
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.BackColor = System.Drawing.Color.Black;
+            this.lblTipo.BackColor = System.Drawing.Color.Gray;
             this.lblTipo.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTipo.ForeColor = System.Drawing.Color.White;
-            this.lblTipo.Location = new System.Drawing.Point(293, 192);
+            this.lblTipo.Location = new System.Drawing.Point(256, 144);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(75, 38);
+            this.lblTipo.Size = new System.Drawing.Size(59, 30);
             this.lblTipo.TabIndex = 17;
             this.lblTipo.Text = "Tipo";
             // 
             // lblTariffaAutoFurgo
             // 
             this.lblTariffaAutoFurgo.AutoSize = true;
-            this.lblTariffaAutoFurgo.BackColor = System.Drawing.Color.Black;
+            this.lblTariffaAutoFurgo.BackColor = System.Drawing.Color.Gray;
             this.lblTariffaAutoFurgo.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTariffaAutoFurgo.ForeColor = System.Drawing.Color.White;
-            this.lblTariffaAutoFurgo.Location = new System.Drawing.Point(12, 191);
+            this.lblTariffaAutoFurgo.Location = new System.Drawing.Point(10, 143);
             this.lblTariffaAutoFurgo.Name = "lblTariffaAutoFurgo";
-            this.lblTariffaAutoFurgo.Size = new System.Drawing.Size(102, 38);
+            this.lblTariffaAutoFurgo.Size = new System.Drawing.Size(79, 30);
             this.lblTariffaAutoFurgo.TabIndex = 18;
             this.lblTariffaAutoFurgo.Text = "Tariffa";
             // 
             // txtTariffaAF
             // 
             this.txtTariffaAF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtTariffaAF.Location = new System.Drawing.Point(12, 241);
+            this.txtTariffaAF.Location = new System.Drawing.Point(10, 181);
+            this.txtTariffaAF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTariffaAF.Name = "txtTariffaAF";
-            this.txtTariffaAF.Size = new System.Drawing.Size(178, 34);
+            this.txtTariffaAF.Size = new System.Drawing.Size(156, 29);
             this.txtTariffaAF.TabIndex = 19;
             // 
             // rbAutomobile
@@ -178,9 +185,10 @@ namespace noleggio
             this.rbAutomobile.AutoSize = true;
             this.rbAutomobile.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rbAutomobile.ForeColor = System.Drawing.Color.White;
-            this.rbAutomobile.Location = new System.Drawing.Point(293, 233);
+            this.rbAutomobile.Location = new System.Drawing.Point(256, 175);
+            this.rbAutomobile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbAutomobile.Name = "rbAutomobile";
-            this.rbAutomobile.Size = new System.Drawing.Size(194, 42);
+            this.rbAutomobile.Size = new System.Drawing.Size(152, 34);
             this.rbAutomobile.TabIndex = 20;
             this.rbAutomobile.Text = "Automobile";
             this.rbAutomobile.UseVisualStyleBackColor = true;
@@ -191,20 +199,35 @@ namespace noleggio
             this.rbFurgone.AutoSize = true;
             this.rbFurgone.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rbFurgone.ForeColor = System.Drawing.Color.White;
-            this.rbFurgone.Location = new System.Drawing.Point(293, 289);
+            this.rbFurgone.Location = new System.Drawing.Point(256, 217);
+            this.rbFurgone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbFurgone.Name = "rbFurgone";
-            this.rbFurgone.Size = new System.Drawing.Size(147, 42);
+            this.rbFurgone.Size = new System.Drawing.Size(116, 34);
             this.rbFurgone.TabIndex = 21;
             this.rbFurgone.Text = "Furgone";
             this.rbFurgone.UseVisualStyleBackColor = true;
             this.rbFurgone.Click += new System.EventHandler(this.rbFurgone_CheckedChanged);
             // 
+            // btnAnnullaVeicolo
+            // 
+            this.btnAnnullaVeicolo.BackColor = System.Drawing.Color.White;
+            this.btnAnnullaVeicolo.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAnnullaVeicolo.Location = new System.Drawing.Point(240, 390);
+            this.btnAnnullaVeicolo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAnnullaVeicolo.Name = "btnAnnullaVeicolo";
+            this.btnAnnullaVeicolo.Size = new System.Drawing.Size(115, 46);
+            this.btnAnnullaVeicolo.TabIndex = 22;
+            this.btnAnnullaVeicolo.Text = "Annulla";
+            this.btnAnnullaVeicolo.UseVisualStyleBackColor = false;
+            this.btnAnnullaVeicolo.Click += new System.EventHandler(this.btnAnnullaVeicolo_Click);
+            // 
             // FormVeicolo1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(511, 609);
+            this.BackColor = System.Drawing.Color.Gray;
+            this.ClientSize = new System.Drawing.Size(447, 457);
+            this.Controls.Add(this.btnAnnullaVeicolo);
             this.Controls.Add(this.rbFurgone);
             this.Controls.Add(this.rbAutomobile);
             this.Controls.Add(this.txtTariffaAF);
@@ -218,7 +241,8 @@ namespace noleggio
             this.Controls.Add(this.txtTargaA);
             this.Controls.Add(this.lblModelloVeicolo);
             this.Controls.Add(this.lblTargaVeicolo);
-            this.Controls.Add(this.btnSalva);
+            this.Controls.Add(this.btnSalvaVeicolo);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormVeicolo1";
             this.Text = "Veicolo";
             this.Load += new System.EventHandler(this.FormVeicolo1_Load);
@@ -229,7 +253,7 @@ namespace noleggio
 
         #endregion
 
-        private System.Windows.Forms.Button btnSalva;
+        private System.Windows.Forms.Button btnSalvaVeicolo;
         private System.Windows.Forms.Label lblTargaVeicolo;
         private System.Windows.Forms.Label lblModelloVeicolo;
         private System.Windows.Forms.TextBox txtTargaA;
@@ -243,5 +267,6 @@ namespace noleggio
         private System.Windows.Forms.TextBox txtTariffaAF;
         private System.Windows.Forms.RadioButton rbAutomobile;
         private System.Windows.Forms.RadioButton rbFurgone;
+        private System.Windows.Forms.Button btnAnnullaVeicolo;
     }
 }

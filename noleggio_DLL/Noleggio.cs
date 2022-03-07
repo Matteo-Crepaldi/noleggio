@@ -6,13 +6,17 @@ namespace noleggio_DLL
     {
         public int ID { get; }
         public DateTime DataInizio { get; }
-        public int NumGiorni { get; }
-        public double Costo { get; }
+        public DateTime DataFine { get; }
+        
+        public int NumGiorni { get; set; }
+        public double Costo { get; set; }
 
-        public Noleggio(DateTime data)
+        public Noleggio(DateTime dataI,DateTime dataF)
         {
             ID = GeneraID();
-            DataInizio = data;
+            DataInizio = dataI;
+            DataFine = dataF;
+            Costo = CostoVeicolo();
         }
 
         public Noleggio()
@@ -21,7 +25,7 @@ namespace noleggio_DLL
             DataInizio = DateTime.Now;
         }
 
-        private int GeneraID()
+        public int GeneraID()
         {
             Random random = new Random();
             string charset = "1234567890", outString = "";
@@ -29,6 +33,20 @@ namespace noleggio_DLL
             for (int K = 0; K < 12; K++) outString += charset[random.Next(0, charset.Length)];
 
             return int.Parse(outString);
+        }
+
+        public double CostoVeicolo()
+        {
+            NumGiorni = Convert.ToInt32(DataInizio - DataFine);
+
+            Costo = Convert.ToDouble(NumGiorni)*10;
+
+            return Costo;
+        }
+
+        public string GetInfo()
+        {
+            return ID + " " + DataInizio + " " + DataFine + " " + Costo;
         }
     }
 }

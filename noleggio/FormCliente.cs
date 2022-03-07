@@ -30,5 +30,14 @@ namespace noleggio
         {
             
         }
+
+        private void btnAnnulla_Click(object sender, EventArgs e)
+        {
+            txtNomeC.Text = "";
+            txtCognomeC.Text = "";
+            txtCodiceFiscaleC.Text = "";
+
+            Close();
+        }
     }
 }

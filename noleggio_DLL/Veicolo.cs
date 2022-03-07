@@ -34,9 +34,9 @@ namespace noleggio_DLL
             Impegnato = true;
         }
 
-        public void Noleggia(DateTime d)
+        public void Noleggia(DateTime dI,DateTime dF)
         {
-            Noleggio n = new Noleggio(d);
+            Noleggio n = new Noleggio(dI,dF);
             Noleggi.Add(n);
             Impegnato = true;
         }

@@ -8,6 +8,7 @@ namespace noleggio
     public partial class FormCentroNoleggio : Form
     {
         CentroNoleggio cn = new CentroNoleggio("Rimini Noleggio");
+        Veicolo v = new Veicolo();
         public FormCentroNoleggio()
         {
             InitializeComponent();
@@ -47,11 +48,27 @@ namespace noleggio
             {
                 lstListaDeiVeicoli.Items.Add(itemV.GetInfo());
             }
+
+            foreach (var itemN in cn.Noleggi)
+            {
+                lstNoleggiEffettuati.Items.Add(itemN.GetInfo());
+            }
         }
 
         private void btnEffettuaNoleggio_Click(object sender, EventArgs e)
         {
+            // volevo fare che una volta che ho selezionato il veicolo mi apre la formNoleggio
+            //v = cn.Veicoli[lstListaDeiVeicoli.SelectedIndex]; non funziona da errore
+            FormNoleggio fn = new FormNoleggio(cn,v);
 
+            if (lstListaDeiVeicoli.SelectedItems.Count==0)
+            {
+                MessageBox.Show("Non hai selezionato nessun veicolo!!");
+            }
+            else
+            {
+                fn.ShowDialog();
+            }
         }
 
         private void btnCreaVeicolo_Click(object sender, EventArgs e)
@@ -59,6 +76,11 @@ namespace noleggio
             FormVeicolo1 fa = new FormVeicolo1(cn);
 
             fa.ShowDialog();
+        }
+
+        private void FormCentroNoleggio_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

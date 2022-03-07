@@ -27,5 +27,10 @@ namespace noleggio_DLL
         {
             Clienti.Add(c);
         }
+
+        public void AddNoleggi(Noleggio n)
+        {
+            Noleggi.Add(n);
+        }
     }
 }
