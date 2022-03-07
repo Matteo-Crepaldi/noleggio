@@ -9,7 +9,7 @@ namespace noleggio_DLL
         public string Modello { get; }
         public string Tipo { get; }
         public double Tariffa { get; }
-        private bool Impegnato { get; set; }
+        public bool Impegnato { get; protected set; }
         public List<Noleggio> Noleggi { get; set; }
 
         protected Veicolo(string targa, string modello, double tariffa)
@@ -23,8 +23,7 @@ namespace noleggio_DLL
 
         public bool GetStatus()
         {
-            bool status = Impegnato;
-            return status;
+            return Impegnato;
         }
 
         public void Noleggia()
@@ -41,10 +40,7 @@ namespace noleggio_DLL
             Impegnato = true;
         }
 
-        public virtual string GetInfo()
-        {
-            return Targa + " " + Modello + " " + Tariffa.ToString();
-        }
+        public virtual string GetInfo() { return ""; }
     }
 
     public class Automobile : Veicolo
@@ -58,7 +54,7 @@ namespace noleggio_DLL
 
         public override string GetInfo()
         {
-            return Targa + " " + Modello + " " + Tariffa.ToString() + " " + NumPosti.ToString();
+            return $"{Targa};{Modello};{Tariffa};{NumPosti}";
         }
     }
 
@@ -73,7 +69,7 @@ namespace noleggio_DLL
 
         public override string GetInfo()
         {
-            return Targa + " " + Modello + " " + Tariffa.ToString() + " " + Capacita.ToString();
+            return $"{Targa};{Modello};{Tariffa};{Capacita}";
         }
     }
 }

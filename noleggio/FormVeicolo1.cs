@@ -7,6 +7,7 @@ namespace noleggio
     public partial class FormVeicolo1 : Form
     {
         CentroNoleggio cn;
+
         public FormVeicolo1(CentroNoleggio cn)
         {
             this.cn = cn;
