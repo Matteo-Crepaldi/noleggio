@@ -18,9 +18,18 @@ namespace noleggio_DLL
             Noleggi = new List<Noleggio>();
         }
 
-        public void AddVeicolo(Veicolo v)
+        public bool AddVeicolo(Veicolo v)
         {
-            Veicoli.Add(v);
+            bool ripetuto = false;
+
+            foreach (Veicolo veicolo in Veicoli)
+            {
+                if (veicolo.Targa == v.Targa) ripetuto = true;
+            }
+
+            if (ripetuto == false) Veicoli.Add(v);
+
+            return ripetuto;
         }
 
         public void AddCliente(Cliente c)

@@ -16,28 +16,85 @@ namespace noleggio
 
         private void btnSalva_Click(object sender, EventArgs e)
         {
-            if (rbAutomobile.Checked == true)
-            {
-                Automobile a = new Automobile(txtTargaA.Text, txtModelloA.Text, Convert.ToInt32(txtTariffaAF.Text), Convert.ToInt32(txtnumPostiA.Text));
-                cn.AddVeicolo(a);
+        string targa, tariffa_string, modello;
+        double tariffa = 0;
+        bool errore;
 
-                if (txtTargaA.Text == "" || txtTariffaAF.Text == "" || txtModelloA.Text == "" || txtnumPostiA.Text == "" || txtCapacitàF.Text == "")
-                {
-                    MessageBox.Show("le textBox sono vuote");
-                }
-            }
-            else
-            {
-                Furgone f = new Furgone(txtTargaA.Text, txtModelloA.Text, Convert.ToInt32(txtTariffaAF.Text), Convert.ToInt32(txtCapacitàF.Text));
-                cn.AddVeicolo(f);
+        targa = txtTargaA.Text;
+        tariffa_string = txtTariffaAF.Text;
+        modello = txtModelloA.Text;
 
-                if (txtTargaA.Text == "" || txtTariffaAF.Text == "" || txtModelloA.Text == "" || txtnumPostiA.Text == "" || txtCapacitàF.Text == "")
+        if (targa != "" || tariffa_string != "" || modello != "")
+        {
+            bool esito;
+
+            errore = false;
+
+            try { tariffa = Convert.ToDouble(tariffa_string); }
+            catch { errore = true; }
+
+            if (errore == false)
+            {
+                if (rbAutomobile.Checked == true)
                 {
-                    MessageBox.Show("le textBox sono vuote");
+                    errore = false;
+
+                    string numPosti_string;
+                    int numPosti = 0;
+                    Automobile a;
+
+                    numPosti_string = txtnumPostiA.Text;
+
+                    try { numPosti = Convert.ToInt32(numPosti_string); }
+                    catch { errore = true; }
+
+                    if (errore == false && numPosti > 0)
+                    {
+                        a = new Automobile(targa, modello, tariffa, numPosti);
+                        esito = cn.AddVeicolo(a);
+
+                        if (esito == true) MessageBox.Show("Targa già esistente");
+                        else
+                        {
+                            MessageBox.Show("Automobile creata con successo");
+                            this.Close();
+                        }
+                    }
+                    else MessageBox.Show("Inserire un numero di posti valido");
                 }
+                else if (rbFurgone.Checked == true)
+                {
+                    errore = false;
+
+                    string capacita_string;
+                    int capacita = 0;
+                    Furgone f;
+
+                    capacita_string = txtCapacitàF.Text;
+
+                    try { capacita = Convert.ToInt32(capacita_string); }
+                    catch { errore = true; }
+
+                    if (errore == false && tariffa > 0)
+                    {
+                        f = new Furgone(targa, modello, tariffa, capacita);
+                        esito = cn.AddVeicolo(f);
+
+                        if (esito == true) MessageBox.Show("Targa già esistente");
+                        else
+                        {
+                            MessageBox.Show("Furgone creato con successo");
+                            this.Close();
+                        }
+                    }
+                    else MessageBox.Show("Inserire una capacità valida");
+                }
+                else MessageBox.Show("Compilare tutti i campi");
             }
-            
-            Close();
+            else MessageBox.Show("Inserire una tariffa valida");
+        }
+        else MessageBox.Show("Compilare tutti i campi");
+        Close();
         }
 
         private void rbAutomobile_CheckedChanged(object sender, EventArgs e)
@@ -64,7 +121,7 @@ namespace noleggio
 
         private void FormVeicolo1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnAnnullaVeicolo_Click(object sender, EventArgs e)
@@ -80,4 +137,4 @@ namespace noleggio
             Close();
         }
     }
-}
+}   

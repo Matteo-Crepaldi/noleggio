@@ -14,11 +14,9 @@ namespace noleggio
     public partial class FormNoleggio : Form
     {
         CentroNoleggio cn;
-        Veicolo v;
-        public FormNoleggio(CentroNoleggio cn, Veicolo v)
+        public FormNoleggio(CentroNoleggio cn)
         {
             this.cn = cn;
-            this.v = v;
             InitializeComponent();
         }
 
@@ -40,6 +38,11 @@ namespace noleggio
             cn.AddNoleggi(n);
             
             Close();
+        }
+
+        private void FormNoleggio_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -8,7 +8,7 @@ namespace noleggio
     public partial class FormCentroNoleggio : Form
     {
         CentroNoleggio cn = new CentroNoleggio("Rimini Noleggio");
-        Veicolo v = new Veicolo();
+        //Veicolo v = new Veicolo();
         public FormCentroNoleggio()
         {
             InitializeComponent();
@@ -59,7 +59,7 @@ namespace noleggio
         {
             // volevo fare che una volta che ho selezionato il veicolo mi apre la formNoleggio
             //v = cn.Veicoli[lstListaDeiVeicoli.SelectedIndex]; non funziona da errore
-            FormNoleggio fn = new FormNoleggio(cn,v);
+            FormNoleggio fn = new FormNoleggio(cn);
 
             if (lstListaDeiVeicoli.SelectedItems.Count==0)
             {

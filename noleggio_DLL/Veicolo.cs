@@ -51,7 +51,7 @@ namespace noleggio_DLL
     {
         public int NumPosti { get; }
 
-        public Automobile(string targa, string modello, int tariffa, int numPosti) : base(targa, modello, tariffa)
+        public Automobile(string targa, string modello, double tariffa, int numPosti) : base(targa, modello, tariffa)
         {
             NumPosti = numPosti;
         }
@@ -66,7 +66,7 @@ namespace noleggio_DLL
     {
         public int Capacita { get; }
 
-        public Furgone(string targa, string modello, int tariffa, int capacita) : base(targa, modello, tariffa)
+        public Furgone(string targa, string modello, double tariffa, int capacita) : base(targa, modello, tariffa)
         {
             Capacita = capacita;
         }
