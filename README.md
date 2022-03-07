@@ -19,6 +19,8 @@
 <h1>Progettazione del software</h1>
 Il programma è stato progettato tramite un <a href="https://drive.google.com/file/d/1DZw9rvS1MwbpIaMYf47k8sWnfkWYb_7X/view?usp=sharing">diagramma delle classi</a>.
 <br><br>
+Il diagramma di GANTT del programma è disponibile <a href="https://drive.google.com/file/d/1xgwgAksfadbmoVWuWoPEfhMwRnZD67Tn/view?usp=sharing">qui</a>
+<br><br>
 Il software verrà sviluppato utilizzando Visual Studio in C#. Verrà organizzato in due progetti (noleggio e noleggio_DLL) uno dei quali sarà dedicato allo sviluppo della libreria
 utlizzata per integrare un sistema a classi all'interno del progetto. Verrà data precedenza al funzionamento essenziale del programma che una volta terminato e ottimizzato
 lascerà spazio allo sviluppo estetico dell'ambiente.
