@@ -39,14 +39,14 @@ namespace noleggio_DLL
         {
             NumGiorni = Convert.ToInt32(DataInizio - DataFine);
 
-            Costo = Convert.ToDouble(NumGiorni)*10;
+            Costo = Convert.ToDouble(NumGiorni) * 10;
 
             return Costo;
         }
 
         public string GetInfo()
         {
-            return ID + " " + DataInizio + " " + DataFine + " " + Costo;
+            return $"{ID};{DataInizio};{DataFine};{Costo}";
         }
     }
 }
