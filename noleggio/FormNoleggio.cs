@@ -22,10 +22,6 @@ namespace noleggio
 
         private void btnAnnullaNoleggio_Click(object sender, EventArgs e)
         {
-            txtID.Text = "";
-            txtInizioNoleggio.Text = "";
-            txtFineNoleggio.Text = "";
-
             Close();
         }
 
@@ -33,16 +29,9 @@ namespace noleggio
         {
             Noleggio n;
             n = new Noleggio(Convert.ToDateTime(txtInizioNoleggio.Text),Convert.ToDateTime(txtFineNoleggio.Text));
-            txtID.Text = n.GeneraID().ToString();
-            txtCosto.Text = n.CostoVeicolo().ToString();
             cn.AddNoleggi(n);
             
             Close();
-        }
-
-        private void FormNoleggio_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
