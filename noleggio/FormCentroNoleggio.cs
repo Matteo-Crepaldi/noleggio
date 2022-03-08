@@ -8,7 +8,7 @@ namespace noleggio
     public partial class FormCentroNoleggio : Form
     {
         CentroNoleggio cn = new CentroNoleggio("Rimini Noleggio");
-        //Veicolo v = new Veicolo();
+
         public FormCentroNoleggio()
         {
             InitializeComponent();
@@ -30,57 +30,40 @@ namespace noleggio
         private void btnLogInCliente_Click(object sender, EventArgs e)
         {
             FormCliente fc = new FormCliente(cn);
-
             fc.ShowDialog();
 
-
+            AggiornaLists();
         }
 
-        private void btnAggiorna_Click(object sender, EventArgs e)
+        private void AggiornaLists()
         {
             lstListaDeiClienti.Items.Clear();
-            foreach (var itemC in cn.Clienti)
-            {
-                lstListaDeiClienti.Items.Add(itemC.GetInfo());
-            }
 
-            foreach (var itemV in cn.Veicoli)
-            {
-                lstListaDeiVeicoli.Items.Add(itemV.GetInfo());
-            }
-
-            foreach (var itemN in cn.Noleggi)
-            {
-                lstNoleggiEffettuati.Items.Add(itemN.GetInfo());
-            }
+            foreach (var itemC in cn.Clienti) lstListaDeiClienti.Items.Add(itemC.GetInfo());
+            foreach (var itemV in cn.Veicoli) lstListaDeiVeicoli.Items.Add(itemV.GetInfo());
+            foreach (var itemN in cn.Noleggi) lstNoleggiEffettuati.Items.Add(itemN.GetInfo());
         }
 
         private void btnEffettuaNoleggio_Click(object sender, EventArgs e)
         {
-            // volevo fare che una volta che ho selezionato il veicolo mi apre la formNoleggio
-            //v = cn.Veicoli[lstListaDeiVeicoli.SelectedIndex]; non funziona da errore
-            FormNoleggio fn = new FormNoleggio(cn);
+            int selected_index;
+            Veicolo v;
 
-            if (lstListaDeiVeicoli.SelectedItems.Count==0)
-            {
-                MessageBox.Show("Non hai selezionato nessun veicolo!!");
-            }
+            selected_index = lstListaDeiVeicoli.SelectedIndex;
+
+            if (selected_index == -1) MessageBox.Show("Selezionare un veicolo dalla lista veicoli");
             else
             {
-                fn.ShowDialog();
+                v = cn.Veicoli[selected_index];
             }
         }
 
         private void btnCreaVeicolo_Click(object sender, EventArgs e)
         {
             FormVeicolo1 fa = new FormVeicolo1(cn);
-
             fa.ShowDialog();
-        }
 
-        private void FormCentroNoleggio_Load(object sender, EventArgs e)
-        {
-
+            AggiornaLists();
         }
     }
 }
