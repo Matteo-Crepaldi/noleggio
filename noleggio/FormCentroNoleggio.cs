@@ -12,19 +12,7 @@ namespace noleggio
         public FormCentroNoleggio()
         {
             InitializeComponent();
-        }
-
-        string GetDirPath()
-        {
-            string path, dirPath = "";
-            string[] args;
-
-            path = Directory.GetCurrentDirectory();
-            args = path.Split('\\');
-
-            for (int K = 0; K < args.Length - 3; K++) dirPath += $"{args[K]}\\";
-
-            return dirPath + "files\\";
+            AggiornaLists();
         }
 
         private void btnLogInCliente_Click(object sender, EventArgs e)
