@@ -28,7 +28,7 @@ namespace noleggio
 
         private void FormCliente_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnAnnulla_Click(object sender, EventArgs e)

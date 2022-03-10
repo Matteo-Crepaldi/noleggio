@@ -7,39 +7,37 @@ namespace noleggio_DLL
         public int ID { get; }
         public DateTime DataInizio { get; }
         public DateTime DataFine { get; }
-        
+
         public int NumGiorni { get; set; }
         public double Costo { get; set; }
 
-        public Noleggio(DateTime dataI,DateTime dataF)
+        public Noleggio(DateTime dataI, DateTime dataF, CentroNoleggio cn, Veicolo v)
         {
-            ID = GeneraID();
+            ID = GeneraID(cn);
             DataInizio = dataI;
             DataFine = dataF;
-            Costo = CostoVeicolo();
+            Costo = CostoVeicoloNoleggiato(v);
         }
 
-        public Noleggio()
+        public int GeneraID(CentroNoleggio cn)
         {
-            ID = GeneraID();
-            DataInizio = DateTime.Now;
+            if (cn.Noleggi.Count == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                Noleggio nol = cn.Noleggi[cn.Noleggi.Count - 1];
+
+                return nol.ID + 1;
+            }
         }
 
-        public int GeneraID()
+        public double CostoVeicoloNoleggiato(Veicolo v)
         {
-            Random random = new Random();
-            string charset = "1234567890", outString = "";
+            NumGiorni = Convert.ToInt32((DataFine - DataInizio).Days);
 
-            for (int K = 0; K < 12; K++) outString += charset[random.Next(0, charset.Length)];
-
-            return int.Parse(outString);
-        }
-
-        public double CostoVeicolo()
-        {
-            NumGiorni = Convert.ToInt32(DataInizio - DataFine);
-
-            Costo = Convert.ToDouble(NumGiorni) * 10;
+            Costo = Convert.ToDouble(NumGiorni) * v.Tariffa;
 
             return Costo;
         }

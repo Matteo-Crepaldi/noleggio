@@ -10,7 +10,7 @@ namespace noleggio_DLL
         public string Tipo { get; }
         public double Tariffa { get; }
         public bool Impegnato { get; protected set; }
-        public List<Noleggio> Noleggi { get; set; }
+        public List<Noleggio> NoleggiVeicoli { get; set; }
 
         protected Veicolo(string targa, string modello, double tariffa)
         {
@@ -18,7 +18,7 @@ namespace noleggio_DLL
             Modello = modello;
             Tariffa = tariffa;
             Impegnato = false;
-            Noleggi = new List<Noleggio>();
+            NoleggiVeicoli = new List<Noleggio>();
         }
 
         public bool GetStatus()
@@ -26,18 +26,16 @@ namespace noleggio_DLL
             return Impegnato;
         }
 
-        public void Noleggia()
+        public void Noleggia(DateTime dI, DateTime dF, CentroNoleggio cn, Veicolo v)
         {
-            Noleggio n = new Noleggio();
-            Noleggi.Add(n);
+            Noleggio n = new Noleggio(dI, dF, cn, v);
+            NoleggiVeicoli.Add(n);
             Impegnato = true;
         }
 
-        public void Noleggia(DateTime dI,DateTime dF)
+        public void AddNolV(Noleggio n)
         {
-            Noleggio n = new Noleggio(dI,dF);
-            Noleggi.Add(n);
-            Impegnato = true;
+            NoleggiVeicoli.Add(n);
         }
 
         public virtual string GetInfo() { return ""; }

@@ -17,85 +17,85 @@ namespace noleggio
 
         private void btnSalva_Click(object sender, EventArgs e)
         {
-        string targa, tariffa_string, modello;
-        double tariffa = 0;
-        bool errore;
+            string targa, tariffa_string, modello;
+            double tariffa = 0;
+            bool errore;
 
-        targa = txtTargaA.Text;
-        tariffa_string = txtTariffaAF.Text;
-        modello = txtModelloA.Text;
+            targa = txtTargaA.Text;
+            tariffa_string = txtTariffaAF.Text;
+            modello = txtModelloA.Text;
 
-        if (targa != "" || tariffa_string != "" || modello != "")
-        {
-            bool esito;
-
-            errore = false;
-
-            try { tariffa = Convert.ToDouble(tariffa_string); }
-            catch { errore = true; }
-
-            if (errore == false)
+            if (targa != "" || tariffa_string != "" || modello != "")
             {
-                if (rbAutomobile.Checked == true)
+                bool esito;
+
+                errore = false;
+
+                try { tariffa = Convert.ToDouble(tariffa_string); }
+                catch { errore = true; }
+
+                if (errore == false)
                 {
-                    errore = false;
-
-                    string numPosti_string;
-                    int numPosti = 0;
-                    Automobile a;
-
-                    numPosti_string = txtnumPostiA.Text;
-
-                    try { numPosti = Convert.ToInt32(numPosti_string); }
-                    catch { errore = true; }
-
-                    if (errore == false && numPosti > 0)
+                    if (rbAutomobile.Checked == true)
                     {
-                        a = new Automobile(targa, modello, tariffa, numPosti);
-                        esito = cn.AddVeicolo(a);
+                        errore = false;
 
-                        if (esito == true) MessageBox.Show("Targa già esistente");
-                        else
+                        string numPosti_string;
+                        int numPosti = 0;
+                        Automobile a;
+
+                        numPosti_string = txtnumPostiA.Text;
+
+                        try { numPosti = Convert.ToInt32(numPosti_string); }
+                        catch { errore = true; }
+
+                        if (errore == false && numPosti > 0)
                         {
-                            MessageBox.Show("Automobile creata con successo");
-                            this.Close();
+                            a = new Automobile(targa, modello, tariffa, numPosti);
+                            esito = cn.AddVeicolo(a);
+
+                            if (esito == true) MessageBox.Show("Targa già esistente");
+                            else
+                            {
+                                MessageBox.Show("Automobile creata con successo");
+                                this.Close();
+                            }
                         }
+                        else MessageBox.Show("Inserire un numero di posti valido");
                     }
-                    else MessageBox.Show("Inserire un numero di posti valido");
-                }
-                else if (rbFurgone.Checked == true)
-                {
-                    errore = false;
-
-                    string capacita_string;
-                    int capacita = 0;
-                    Furgone f;
-
-                    capacita_string = txtCapacitàF.Text;
-
-                    try { capacita = Convert.ToInt32(capacita_string); }
-                    catch { errore = true; }
-
-                    if (errore == false && tariffa > 0)
+                    else if (rbFurgone.Checked == true)
                     {
-                        f = new Furgone(targa, modello, tariffa, capacita);
-                        esito = cn.AddVeicolo(f);
+                        errore = false;
 
-                        if (esito == true) MessageBox.Show("Targa già esistente");
-                        else
+                        string capacita_string;
+                        int capacita = 0;
+                        Furgone f;
+
+                        capacita_string = txtCapacitàF.Text;
+
+                        try { capacita = Convert.ToInt32(capacita_string); }
+                        catch { errore = true; }
+
+                        if (errore == false && tariffa > 0)
                         {
-                            MessageBox.Show("Furgone creato con successo");
-                            this.Close();
+                            f = new Furgone(targa, modello, tariffa, capacita);
+                            esito = cn.AddVeicolo(f);
+
+                            if (esito == true) MessageBox.Show("Targa già esistente");
+                            else
+                            {
+                                MessageBox.Show("Furgone creato con successo");
+                                this.Close();
+                            }
                         }
+                        else MessageBox.Show("Inserire una capacità valida");
                     }
-                    else MessageBox.Show("Inserire una capacità valida");
+                    else MessageBox.Show("Compilare tutti i campi");
                 }
-                else MessageBox.Show("Compilare tutti i campi");
+                else MessageBox.Show("Inserire una tariffa valida");
             }
-            else MessageBox.Show("Inserire una tariffa valida");
-        }
-        else MessageBox.Show("Compilare tutti i campi");
-        Close();
+            else MessageBox.Show("Compilare tutti i campi");
+            Close();
         }
 
         private void rbAutomobile_CheckedChanged(object sender, EventArgs e)
@@ -138,4 +138,4 @@ namespace noleggio
             Close();
         }
     }
-}   
+}

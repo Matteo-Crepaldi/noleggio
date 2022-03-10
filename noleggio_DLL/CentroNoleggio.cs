@@ -43,7 +43,7 @@ namespace noleggio_DLL
             clientiArray = File.ReadAllText(path + "\\clienti.csv").Split('\n');
             noleggiArray = File.ReadAllText(path + "\\noleggi.csv").Split('\n');
 
-            foreach(string infocliente in clientiArray)
+            foreach (string infocliente in clientiArray)
             {
                 args = infocliente.Split(';');
 
