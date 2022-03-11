@@ -11,6 +11,7 @@ namespace noleggio_DLL
         public double Tariffa { get; }
         public bool Impegnato { get; protected set; }
         public List<Noleggio> NoleggiVeicoli { get; set; }
+        public int IndiceSel { get; set; }
 
         protected Veicolo(string targa, string modello, double tariffa)
         {
@@ -19,6 +20,11 @@ namespace noleggio_DLL
             Tariffa = tariffa;
             Impegnato = false;
             NoleggiVeicoli = new List<Noleggio>();
+        }
+
+        public Veicolo(int IndiceSel)
+        {
+            this.IndiceSel = IndiceSel;
         }
 
         public bool GetStatus()

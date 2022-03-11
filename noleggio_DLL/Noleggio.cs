@@ -42,9 +42,9 @@ namespace noleggio_DLL
             return Costo;
         }
 
-        public string GetInfo()
+        public string GetInfo(Veicolo v, Cliente c)
         {
-            return $"{ID};{DataInizio};{DataFine};{Costo}";
+            return $"{ID};{v.Targa};{c.CodiceFiscale};{DataInizio};{DataFine};{Costo}";
         }
     }
 }

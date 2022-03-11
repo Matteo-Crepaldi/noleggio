@@ -96,12 +96,12 @@ namespace noleggio
             // 
             // lstNoleggiEffettuati
             // 
-            this.lstNoleggiEffettuati.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lstNoleggiEffettuati.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lstNoleggiEffettuati.FormattingEnabled = true;
-            this.lstNoleggiEffettuati.ItemHeight = 28;
+            this.lstNoleggiEffettuati.ItemHeight = 23;
             this.lstNoleggiEffettuati.Location = new System.Drawing.Point(935, 15);
             this.lstNoleggiEffettuati.Name = "lstNoleggiEffettuati";
-            this.lstNoleggiEffettuati.Size = new System.Drawing.Size(267, 396);
+            this.lstNoleggiEffettuati.Size = new System.Drawing.Size(294, 395);
             this.lstNoleggiEffettuati.TabIndex = 7;
             // 
             // btnDetNol

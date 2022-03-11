@@ -9,12 +9,19 @@ namespace noleggio_DLL
         public string CodiceFiscale { get; }
         public List<Noleggio> NoleggiClienti { get; set; }
 
+        public int IndiceSel { get; set; }
+
         public Cliente(string nome, string cognome, string codiceFiscale)
         {
             Nome = nome;
             Cognome = cognome;
             CodiceFiscale = codiceFiscale;
             NoleggiClienti = new List<Noleggio>();
+        }
+
+        public Cliente(int IndiceSel)
+        {
+            this.IndiceSel = IndiceSel;
         }
 
         public string GetInfo()

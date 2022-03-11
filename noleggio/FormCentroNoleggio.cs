@@ -25,10 +25,10 @@ namespace noleggio
         private void AggiornaLists()
         {
             lstListaDeiClienti.Items.Clear();
+            lstListaDeiVeicoli.Items.Clear();
 
             foreach (var itemC in cn.Clienti) lstListaDeiClienti.Items.Add(itemC.GetInfo());
             foreach (var itemV in cn.Veicoli) lstListaDeiVeicoli.Items.Add(itemV.GetInfo());
-            foreach (var itemN in cn.Noleggi) lstNoleggiEffettuati.Items.Add(itemN.GetInfo());
         }
 
         private void btnEffettuaNoleggio_Click(object sender, EventArgs e)
@@ -40,6 +40,9 @@ namespace noleggio
             selected_indexV = lstListaDeiVeicoli.SelectedIndex;
             selected_indexC = lstListaDeiClienti.SelectedIndex;
 
+            c = new Cliente(selected_indexC);
+            v = new Veicolo(selected_indexV);
+
             if (selected_indexV == -1 && selected_indexC == -1) MessageBox.Show("Selezionare un veicolo dalla lista veicoli");
             else
             {
@@ -49,6 +52,9 @@ namespace noleggio
 
                 fn.ShowDialog();
             }
+
+            lstNoleggiEffettuati.Items.Clear();
+            foreach (var itemN in cn.Noleggi) lstNoleggiEffettuati.Items.Add(itemN.GetInfo(v, c));
         }
 
         private void btnCreaVeicolo_Click(object sender, EventArgs e)
@@ -70,9 +76,9 @@ namespace noleggio
             else
             {
                 n = cn.Noleggi[selezionaNol];
-                FormDettaglioNoleggio fdm = new FormDettaglioNoleggio();
+                //FormDettaglioNoleggio fdm = new FormDettaglioNoleggio(v,c);
 
-                fdm.ShowDialog();
+                //fdm.ShowDialog();
             }
         }
     }
