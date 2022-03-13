@@ -7,7 +7,7 @@ namespace noleggio_DLL
     {
         public string Targa { get; }
         public string Modello { get; }
-        public string Tipo { get; }
+        public string Tipo { get; set; }
         public double Tariffa { get; }
         public bool Impegnato { get; protected set; }
         public List<Noleggio> NoleggiVeicoli { get; set; }

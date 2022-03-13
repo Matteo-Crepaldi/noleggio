@@ -12,6 +12,12 @@ namespace noleggio
         {
             this.cn = cn;
             InitializeComponent();
+
+            txtCapacitàF.Visible = false;
+            txtnumPostiA.Visible = false;
+
+            lblCapacitàFurgone.Visible = false;
+            lblnumPostiAutomobile.Visible = false;
         }
 
 
@@ -58,6 +64,7 @@ namespace noleggio
                             else
                             {
                                 MessageBox.Show("Automobile creata con successo");
+                                a.Tipo = "Automobile";
                                 this.Close();
                             }
                         }
@@ -85,6 +92,7 @@ namespace noleggio
                             else
                             {
                                 MessageBox.Show("Furgone creato con successo");
+                                f.Tipo = "Furgone";
                                 this.Close();
                             }
                         }
@@ -120,21 +128,8 @@ namespace noleggio
             }
         }
 
-        private void FormVeicolo1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAnnullaVeicolo_Click(object sender, EventArgs e)
         {
-            txtTargaA.Text = "";
-            txtModelloA.Text = "";
-            txtTariffaAF.Text = "";
-            rbAutomobile.Checked = false;
-            rbFurgone.Checked = false;
-            txtnumPostiA.Text = "";
-            txtCapacitàF.Text = "";
-
             Close();
         }
     }

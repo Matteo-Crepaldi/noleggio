@@ -7,7 +7,6 @@ namespace noleggio_DLL
         public int ID { get; }
         public DateTime DataInizio { get; }
         public DateTime DataFine { get; }
-
         public int NumGiorni { get; set; }
         public double Costo { get; set; }
 
