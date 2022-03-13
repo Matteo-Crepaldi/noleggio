@@ -15,28 +15,30 @@ namespace noleggio
 
         private void btnSalva_Click(object sender, EventArgs e)
         {
+            string nome, cognome, codiceFiscale;
+            bool ripetuto = false;
             Cliente c;
-            c = new Cliente(txtNomeC.Text, txtCognomeC.Text, txtCodiceFiscaleC.Text);
-            cn.AddCliente(c);
 
-            if (txtNomeC.Text == "" || txtCognomeC.Text == "" || txtCodiceFiscaleC.Text == "")
+            nome = txtNomeC.Text;
+            cognome = txtCognomeC.Text;
+            codiceFiscale = txtCodiceFiscaleC.Text;
+
+            foreach (Cliente cl in cn.Clienti)
             {
-                MessageBox.Show("Le textBox sono vuote");
+                if(cl.CodiceFiscale == codiceFiscale) ripetuto = true;
             }
-            Close();
-        }
 
-        private void FormCliente_Load(object sender, EventArgs e)
-        {
-
+            if (nome != "" && cognome != "" && codiceFiscale != "" && ripetuto == false)
+            {
+                c = new Cliente(nome, cognome, codiceFiscale);
+                cn.Clienti.Add(c);
+            }
+            else if (ripetuto == true) MessageBox.Show("Codice fiscale già esistente");
+            else MessageBox.Show("Compilare tutti i campi");
         }
 
         private void btnAnnulla_Click(object sender, EventArgs e)
         {
-            txtNomeC.Text = "";
-            txtCognomeC.Text = "";
-            txtCodiceFiscaleC.Text = "";
-
             Close();
         }
     }
