@@ -36,7 +36,8 @@ namespace noleggio_DLL
 
         private void LoadFiles(string path)
         {
-            string nome, cognome, cf, targa, modello, tariffa, tipo;
+            string nome, cognome, cf, targa, modello, tipo;
+            double tariffa;
             string[] veicoliArray, clientiArray, noleggiArray, args;
 
             veicoliArray = File.ReadAllText(path + "\\veicoli.csv").Split('\n');
@@ -52,6 +53,38 @@ namespace noleggio_DLL
                 cf = args[2];
 
                 Clienti.Add(new Cliente(nome, cognome, cf));
+            }
+
+            foreach(string infoVeicolo in veicoliArray)
+            {
+                args = infoVeicolo.Split(';');
+
+                targa = args[0];
+                modello = args[1];
+                tariffa = double.Parse(args[2]);
+                tipo = args[4];
+
+                if(tipo == "Automobile")
+                {
+                    Automobile a;
+                    int numPosti = int.Parse(args[3]);
+
+                    a = new Automobile(targa, modello, tariffa, numPosti);
+                    Veicoli.Add(a);
+                }
+                else
+                {
+                    Furgone f;
+                    int capacita = int.Parse(args[3]);
+
+                    f = new Furgone(targa, modello, tariffa, capacita);
+                    Veicoli.Add(f);
+                }
+            }
+
+            foreach(string infoNoleggio in noleggiArray)
+            {
+
             }
         }
 
