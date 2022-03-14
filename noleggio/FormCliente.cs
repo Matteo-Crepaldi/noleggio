@@ -25,7 +25,7 @@ namespace noleggio
 
             foreach (Cliente cl in cn.Clienti)
             {
-                if(cl.CodiceFiscale == codiceFiscale) ripetuto = true;
+                if (cl.CodiceFiscale == codiceFiscale) ripetuto = true;
             }
 
             if (nome != "" && cognome != "" && codiceFiscale != "" && ripetuto == false)

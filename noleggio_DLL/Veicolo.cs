@@ -9,7 +9,7 @@ namespace noleggio_DLL
         public string Modello { get; }
         public string Tipo { get; set; }
         public double Tariffa { get; }
-        public bool Impegnato { get; protected set; }
+        public bool Impegnato { get; set; }
         public List<Noleggio> NoleggiVeicoli { get; set; }
         public int IndiceSel { get; set; }
 
@@ -54,6 +54,7 @@ namespace noleggio_DLL
         public Automobile(string targa, string modello, double tariffa, int numPosti) : base(targa, modello, tariffa)
         {
             NumPosti = numPosti;
+            Tipo = "automobile";
         }
 
         public override string GetInfo()
@@ -69,6 +70,7 @@ namespace noleggio_DLL
         public Furgone(string targa, string modello, double tariffa, int capacita) : base(targa, modello, tariffa)
         {
             Capacita = capacita;
+            Tipo = "furgone";
         }
 
         public override string GetInfo()

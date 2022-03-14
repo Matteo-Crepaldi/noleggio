@@ -1,21 +1,38 @@
 ﻿using System;
+using System.Linq;
 
 namespace noleggio_DLL
 {
     public class Noleggio
     {
         public int ID { get; }
-        public DateTime DataInizio { get; }
-        public DateTime DataFine { get; }
+        public DateTime DataInizio { get; set; }
+        public DateTime DataFine { get; set; }
         public int NumGiorni { get; set; }
         public double Costo { get; set; }
 
-        public Noleggio(DateTime dataI, DateTime dataF, CentroNoleggio cn, Veicolo v)
+        public Veicolo veicolo { get; set; }
+
+        public Cliente cliente { get; set; }
+
+        public Noleggio(DateTime dataI, DateTime dataF, CentroNoleggio cn, Veicolo veicolo, string codiceFiscale)
         {
             ID = GeneraID(cn);
             DataInizio = dataI;
             DataFine = dataF;
-            Costo = CostoVeicoloNoleggiato(v);
+            Costo = CostoVeicoloNoleggiato(veicolo);
+            this.veicolo = veicolo;
+
+            cliente = cn.Clienti.First(c => c.CodiceFiscale == codiceFiscale);
+        }
+
+        public Noleggio(DateTime dataI, DateTime dataF, CentroNoleggio cn, Veicolo veicolo)
+        {
+            ID = GeneraID(cn);
+            DataInizio = dataI;
+            DataFine = dataF;
+            Costo = CostoVeicoloNoleggiato(veicolo);
+            this.veicolo = veicolo;
         }
 
         public int GeneraID(CentroNoleggio cn)
@@ -43,7 +60,7 @@ namespace noleggio_DLL
 
         public string GetInfo(Veicolo v, Cliente c)
         {
-            return $"{ID};{v.Targa};{c.CodiceFiscale};{DataInizio};{DataFine};{Costo}";
+            return $"{ID};{v.Targa};{c.CodiceFiscale};{NumGiorni};{Costo}";
         }
     }
 }

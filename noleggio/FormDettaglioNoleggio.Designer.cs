@@ -38,8 +38,7 @@ namespace noleggio
             this.lblTipoVeicolo = new System.Windows.Forms.Label();
             this.lblImpegnatoVeicolo = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
-            this.btnSalvaNoleggio = new System.Windows.Forms.Button();
-            this.btnAnnullaCliente = new System.Windows.Forms.Button();
+            this.btnChiudiFD = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNomeCliente
@@ -114,30 +113,18 @@ namespace noleggio
             this.lblId.Size = new System.Drawing.Size(105, 56);
             this.lblId.TabIndex = 8;
             // 
-            // btnSalvaNoleggio
+            // btnChiudiFD
             // 
-            this.btnSalvaNoleggio.BackColor = System.Drawing.Color.White;
-            this.btnSalvaNoleggio.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSalvaNoleggio.Location = new System.Drawing.Point(119, 321);
-            this.btnSalvaNoleggio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSalvaNoleggio.Name = "btnSalvaNoleggio";
-            this.btnSalvaNoleggio.Size = new System.Drawing.Size(131, 61);
-            this.btnSalvaNoleggio.TabIndex = 9;
-            this.btnSalvaNoleggio.Text = "Salva";
-            this.btnSalvaNoleggio.UseVisualStyleBackColor = false;
-            this.btnSalvaNoleggio.Click += new System.EventHandler(this.btnSalvaNoleggio_Click);
-            // 
-            // btnAnnullaCliente
-            // 
-            this.btnAnnullaCliente.BackColor = System.Drawing.Color.White;
-            this.btnAnnullaCliente.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAnnullaCliente.Location = new System.Drawing.Point(370, 321);
-            this.btnAnnullaCliente.Name = "btnAnnullaCliente";
-            this.btnAnnullaCliente.Size = new System.Drawing.Size(131, 61);
-            this.btnAnnullaCliente.TabIndex = 10;
-            this.btnAnnullaCliente.Text = "Annulla";
-            this.btnAnnullaCliente.UseVisualStyleBackColor = false;
-            this.btnAnnullaCliente.Click += new System.EventHandler(this.btnAnnullaCliente_Click);
+            this.btnChiudiFD.BackColor = System.Drawing.Color.White;
+            this.btnChiudiFD.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnChiudiFD.Location = new System.Drawing.Point(214, 321);
+            this.btnChiudiFD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnChiudiFD.Name = "btnChiudiFD";
+            this.btnChiudiFD.Size = new System.Drawing.Size(131, 61);
+            this.btnChiudiFD.TabIndex = 9;
+            this.btnChiudiFD.Text = "Chiudi";
+            this.btnChiudiFD.UseVisualStyleBackColor = false;
+            this.btnChiudiFD.Click += new System.EventHandler(this.btnChiudiFD_Click);
             // 
             // FormDettaglioNoleggio
             // 
@@ -145,8 +132,7 @@ namespace noleggio
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(594, 393);
-            this.Controls.Add(this.btnAnnullaCliente);
-            this.Controls.Add(this.btnSalvaNoleggio);
+            this.Controls.Add(this.btnChiudiFD);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.lblImpegnatoVeicolo);
             this.Controls.Add(this.lblTipoVeicolo);
@@ -174,7 +160,6 @@ namespace noleggio
         private System.Windows.Forms.Label lblTipoVeicolo;
         private System.Windows.Forms.Label lblImpegnatoVeicolo;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.Button btnSalvaNoleggio;
-        private System.Windows.Forms.Button btnAnnullaCliente;
+        private System.Windows.Forms.Button btnChiudiFD;
     }
 }

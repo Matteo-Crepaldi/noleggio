@@ -25,10 +25,24 @@ namespace noleggio
         private void btnSalvaNoleggio_Click(object sender, EventArgs e)
         {
             Noleggio n;
-            n = new Noleggio(Convert.ToDateTime(txtInizioNoleggio.Text), Convert.ToDateTime(txtFineNoleggio.Text), cn, v);
-            cn.AddNoleggi(n);
-            v.AddNolV(n);
-            c.AddNolC(n);
+            DateTime dI;
+            DateTime dF;
+
+            dI = Convert.ToDateTime(txtInizioNoleggio.Text);
+            dF = Convert.ToDateTime(txtFineNoleggio.Text);
+            if (DateTime.Now.CompareTo(dI) > 0 && DateTime.Now.CompareTo(dF) > 0)
+            {
+                MessageBox.Show("Hai inserito una data già esistente!!");
+            }
+            else
+            {
+                n = new Noleggio(Convert.ToDateTime(txtInizioNoleggio.Text), Convert.ToDateTime(txtFineNoleggio.Text), cn, v);
+                v.Impegnato = true;
+                cn.AddNoleggi(n);
+                v.AddNolV(n);
+                c.AddNolC(n);
+
+            }
 
             Close();
         }

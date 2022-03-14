@@ -55,7 +55,7 @@ namespace noleggio_DLL
                 Clienti.Add(new Cliente(nome, cognome, cf));
             }
 
-            foreach(string infoVeicolo in veicoliArray)
+            foreach (string infoVeicolo in veicoliArray)
             {
                 args = infoVeicolo.Split(';');
 
@@ -64,7 +64,7 @@ namespace noleggio_DLL
                 tariffa = double.Parse(args[2]);
                 tipo = args[4];
 
-                if(tipo == "Automobile")
+                if (tipo == "automobile")
                 {
                     Automobile a;
                     int numPosti = int.Parse(args[3]);
@@ -82,7 +82,7 @@ namespace noleggio_DLL
                 }
             }
 
-            foreach(string infoNoleggio in noleggiArray)
+            foreach (string infoNoleggio in noleggiArray)
             {
 
             }

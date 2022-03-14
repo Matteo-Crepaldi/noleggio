@@ -96,19 +96,19 @@ namespace noleggio
             // 
             // lstNoleggiEffettuati
             // 
-            this.lstNoleggiEffettuati.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lstNoleggiEffettuati.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lstNoleggiEffettuati.FormattingEnabled = true;
-            this.lstNoleggiEffettuati.ItemHeight = 23;
+            this.lstNoleggiEffettuati.ItemHeight = 28;
             this.lstNoleggiEffettuati.Location = new System.Drawing.Point(935, 15);
             this.lstNoleggiEffettuati.Name = "lstNoleggiEffettuati";
-            this.lstNoleggiEffettuati.Size = new System.Drawing.Size(294, 395);
+            this.lstNoleggiEffettuati.Size = new System.Drawing.Size(294, 396);
             this.lstNoleggiEffettuati.TabIndex = 7;
             // 
             // btnDetNol
             // 
             this.btnDetNol.BackColor = System.Drawing.Color.White;
             this.btnDetNol.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDetNol.Location = new System.Drawing.Point(11, 296);
+            this.btnDetNol.Location = new System.Drawing.Point(11, 290);
             this.btnDetNol.Name = "btnDetNol";
             this.btnDetNol.Size = new System.Drawing.Size(186, 59);
             this.btnDetNol.TabIndex = 8;

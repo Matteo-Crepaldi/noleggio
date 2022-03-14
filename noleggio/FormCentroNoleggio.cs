@@ -76,9 +76,9 @@ namespace noleggio
             else
             {
                 n = cn.Noleggi[selezionaNol];
-                //FormDettaglioNoleggio fdm = new FormDettaglioNoleggio(v,c);
+                FormDettaglioNoleggio fdm = new FormDettaglioNoleggio(n);
 
-                //fdm.ShowDialog();
+                fdm.ShowDialog();
             }
         }
     }
