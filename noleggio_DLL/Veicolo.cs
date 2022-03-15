@@ -32,13 +32,6 @@ namespace noleggio_DLL
             return Impegnato;
         }
 
-        public void Noleggia(DateTime dI, DateTime dF, CentroNoleggio cn, Veicolo v)
-        {
-            Noleggio n = new Noleggio(dI, dF, cn, v);
-            NoleggiVeicoli.Add(n);
-            Impegnato = true;
-        }
-
         public void AddNolV(Noleggio n)
         {
             NoleggiVeicoli.Add(n);

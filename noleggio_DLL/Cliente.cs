@@ -26,7 +26,7 @@ namespace noleggio_DLL
 
         public string GetInfo()
         {
-            return $"{Nome};{Cognome};{CodiceFiscale}";
+            return $"{Nome};{Cognome};{CodiceFiscale};";
         }
 
         public void AddNolC(Noleggio n)
