@@ -1,49 +1,47 @@
 ﻿using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace noleggio_DLL
 {
     public class Noleggio
     {
         public int ID { get; }
-        public DateTime DataInizio { get; set; }
-        public DateTime DataFine { get; set; }
-        public int NumGiorni { get; set; }
-        public double Costo { get; set; }
+        public DateTime DataInizio { get; private set; }
+        public DateTime DataFine { get; private set; }
+        public int NumGiorni { get; private set; }
+        public double Costo { get; private set; }
+        public Veicolo veicolo { get; private set; }
+        public Cliente cliente { get; private set; }
+        public List<Cliente> Clienti { get; private set; }
+        public List<Veicolo> Veicoli { get; private set; }
+        public List<Noleggio> Noleggi { get; private set; }
 
-        public Veicolo veicolo { get; set; }
-
-        public Cliente cliente { get; set; }
-
-        public Noleggio(DateTime dataI, DateTime dataF, CentroNoleggio cn, Veicolo veicolo, string codiceFiscale)
+        public Noleggio(DateTime dataI, DateTime dataF, List<Veicolo> veicoli, List<Cliente> clienti, List<Noleggio> noleggi, string targaVeicolo, string codiceFiscale)
         {
-            ID = GeneraID(cn);
+            Clienti = clienti;
+            Veicoli = veicoli;
+            Noleggi = noleggi;
+
+            cliente = Clienti.First(c => c.CodiceFiscale == codiceFiscale);
+            veicolo = Veicoli.First(v => v.Targa == targaVeicolo);
+
             DataInizio = dataI;
             DataFine = dataF;
-            Costo = CostoVeicoloNoleggiato(veicolo);
-            this.veicolo = veicolo;
 
-            cliente = cn.Clienti.First(c => c.CodiceFiscale == codiceFiscale);
+            ID = GeneraID(noleggi);
+            Costo = CostoVeicoloNoleggiato(veicolo);
         }
 
-        public Noleggio(DateTime dataI, DateTime dataF, CentroNoleggio cn, Veicolo veicolo)
+        public int GeneraID(List<Noleggio> noleggi)
         {
-            ID = GeneraID(cn);
-            DataInizio = dataI;
-            DataFine = dataF;
-            Costo = CostoVeicoloNoleggiato(veicolo);
-            this.veicolo = veicolo;
-        }
-
-        public int GeneraID(CentroNoleggio cn)
-        {
-            if (cn.Noleggi.Count == 0)
+            if (noleggi.Count == 0)
             {
                 return 1;
             }
             else
             {
-                Noleggio nol = cn.Noleggi[cn.Noleggi.Count - 1];
+                Noleggio nol = noleggi[noleggi.Count - 1];
 
                 return nol.ID + 1;
             }
@@ -58,9 +56,9 @@ namespace noleggio_DLL
             return Costo;
         }
 
-        public string GetInfo(Veicolo v, Cliente c)
+        public string GetInfo()
         {
-            return $"{ID};{v.Targa};{c.CodiceFiscale};{NumGiorni};{Costo}";
+            return $"{ID};{veicolo.Targa};{cliente.CodiceFiscale};{NumGiorni};{Costo}";
         }
     }
 }

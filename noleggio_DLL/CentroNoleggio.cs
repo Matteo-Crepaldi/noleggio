@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System;
 
 namespace noleggio_DLL
 {
@@ -21,7 +22,7 @@ namespace noleggio_DLL
             LoadFiles(GetPath());
         }
 
-        private string GetPath()
+        public string GetPath()
         {
             string path, dirPath = "";
             string[] args;
@@ -36,7 +37,6 @@ namespace noleggio_DLL
 
         private void LoadFiles(string path)
         {
-            string nome, cognome, cf, targa, modello, tipo;
             double tariffa;
             string[] veicoliArray, clientiArray, noleggiArray, args;
 
@@ -46,45 +46,69 @@ namespace noleggio_DLL
 
             foreach (string infocliente in clientiArray)
             {
+                string nome, cognome, cf;
+
                 args = infocliente.Split(';');
 
-                nome = args[0];
-                cognome = args[1];
-                cf = args[2];
+                if (args.Length > 1)
+                {
+                    nome = args[0];
+                    cognome = args[1];
+                    cf = args[2];
 
-                Clienti.Add(new Cliente(nome, cognome, cf));
+                    Clienti.Add(new Cliente(nome, cognome, cf));
+                }
             }
 
             foreach (string infoVeicolo in veicoliArray)
             {
+                string targa, modello, tipo;
+
                 args = infoVeicolo.Split(';');
 
-                targa = args[0];
-                modello = args[1];
-                tariffa = double.Parse(args[2]);
-                tipo = args[4];
-
-                if (tipo == "automobile")
+                if (args.Length > 1)
                 {
-                    Automobile a;
-                    int numPosti = int.Parse(args[3]);
+                    targa = args[0];
+                    modello = args[1];
+                    tariffa = double.Parse(args[2]);
+                    tipo = args[4];
 
-                    a = new Automobile(targa, modello, tariffa, numPosti);
-                    Veicoli.Add(a);
-                }
-                else
-                {
-                    Furgone f;
-                    int capacita = int.Parse(args[3]);
+                    if (tipo == "automobile")
+                    {
+                        Automobile a;
+                        int numPosti = int.Parse(args[3]);
 
-                    f = new Furgone(targa, modello, tariffa, capacita);
-                    Veicoli.Add(f);
+                        a = new Automobile(targa, modello, tariffa, numPosti);
+                        Veicoli.Add(a);
+                    }
+                    else
+                    {
+                        Furgone f;
+                        int capacita = int.Parse(args[3]);
+
+                        f = new Furgone(targa, modello, tariffa, capacita);
+                        Veicoli.Add(f);
+                    }
                 }
             }
 
             foreach (string infoNoleggio in noleggiArray)
             {
+                string targaVeicolo, codiceFiscale;
+                DateTime dataInizio, dataFine;
 
+                args = infoNoleggio.Split(';');
+
+                if(args.Length > 1)
+                {
+                    dataInizio = DateTime.Parse(args[0]);
+                    dataFine = DateTime.Parse(args[1]);
+                    targaVeicolo = args[2];
+                    codiceFiscale = args[3];
+
+                    Noleggio n = new Noleggio(dataInizio, dataFine, Veicoli, Clienti, Noleggi, targaVeicolo, codiceFiscale);
+                    Noleggi.Add(n);
+                }
             }
         }
 
