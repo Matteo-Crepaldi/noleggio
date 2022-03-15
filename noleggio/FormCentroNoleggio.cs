@@ -1,6 +1,7 @@
 ﻿using noleggio_DLL;
 using System;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace noleggio
 {
@@ -24,11 +25,25 @@ namespace noleggio
 
         private void AggiornaLists()
         {
+            bool noleggiato;
+
             lstListaDeiClienti.Items.Clear();
             lstListaDeiVeicoli.Items.Clear();
+            lstNoleggiEffettuati.Items.Clear();
 
-            foreach (var itemC in cn.Clienti) lstListaDeiClienti.Items.Add(itemC.GetInfo());
-            foreach (var itemV in cn.Veicoli) lstListaDeiVeicoli.Items.Add(itemV.GetInfo());
+            foreach (Cliente c in cn.Clienti) lstListaDeiClienti.Items.Add(c.GetInfo());
+
+            foreach (Veicolo v in cn.Veicoli)
+            {
+                noleggiato = true;
+
+                try { cn.Noleggi.First(n => n.veicolo.Targa == v.Targa); }
+                catch { noleggiato = false; }
+
+                if(noleggiato == false) lstListaDeiVeicoli.Items.Add(v.GetInfo());
+            }
+
+            foreach (Noleggio n in cn.Noleggi) lstNoleggiEffettuati.Items.Add(n.GetInfo());
         }
 
         private void btnEffettuaNoleggio_Click(object sender, EventArgs e)
@@ -43,7 +58,7 @@ namespace noleggio
             c = new Cliente(selected_indexC);
             v = new Veicolo(selected_indexV);
 
-            if (selected_indexV == -1 && selected_indexC == -1) MessageBox.Show("Selezionare un veicolo dalla lista veicoli");
+            if (selected_indexV == -1 || selected_indexC == -1) MessageBox.Show("Selezionare un veicolo dalla lista veicoli");
             else
             {
                 v = cn.Veicoli[selected_indexV];
@@ -53,8 +68,7 @@ namespace noleggio
                 fn.ShowDialog();
             }
 
-            lstNoleggiEffettuati.Items.Clear();
-            foreach (var itemN in cn.Noleggi) lstNoleggiEffettuati.Items.Add(itemN.GetInfo(v, c));
+            AggiornaLists();
         }
 
         private void btnCreaVeicolo_Click(object sender, EventArgs e)
