@@ -1,12 +1,14 @@
 ﻿using noleggio_DLL;
 using System;
 using System.Windows.Forms;
+using System.IO;
 
 namespace noleggio
 {
     public partial class FormCliente : Form
     {
         CentroNoleggio cn;
+
         public FormCliente(CentroNoleggio cn)
         {
             this.cn = cn;
@@ -32,9 +34,21 @@ namespace noleggio
             {
                 c = new Cliente(nome, cognome, codiceFiscale);
                 cn.Clienti.Add(c);
+
+                MessageBox.Show("Clinte aggiunto con successo");
+                Close();
+
+                SalvaDati(c);
             }
             else if (ripetuto == true) MessageBox.Show("Codice fiscale già esistente");
             else MessageBox.Show("Compilare tutti i campi");
+        }
+
+        private void SalvaDati(Cliente c)
+        {
+            StreamWriter st = File.AppendText(cn.GetPath() + "\\clienti.csv");
+            st.WriteLine(c.GetInfo());
+            st.Close();
         }
 
         private void btnAnnulla_Click(object sender, EventArgs e)
