@@ -1,7 +1,7 @@
 ﻿using noleggio_DLL;
 using System;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace noleggio
 {
@@ -30,16 +30,17 @@ namespace noleggio
             DateTime dI;
             DateTime dF;
 
-            dI = Convert.ToDateTime(txtInizioNoleggio.Text);
-            dF = Convert.ToDateTime(txtFineNoleggio.Text);
+            //dI = Convert.ToDateTime(txtInizioNoleggio.Text);
+            dI = dtpDataInizioNol.Value;
+            dF = dtpDataFineNol.Value;
 
             if (DateTime.Now.CompareTo(dI) > 0 && DateTime.Now.CompareTo(dF) > 0)
             {
-                MessageBox.Show("Targà già esistente");
+                MessageBox.Show("La data è passata");
             }
             else
             {
-                n = new Noleggio(Convert.ToDateTime(txtInizioNoleggio.Text), Convert.ToDateTime(txtFineNoleggio.Text), cn.Veicoli, cn.Clienti, cn.Noleggi, v.Targa, c.CodiceFiscale);
+                n = new Noleggio(dtpDataInizioNol.Value, dtpDataFineNol.Value, cn.Veicoli, cn.Clienti, cn.Noleggi, v.Targa, c.CodiceFiscale);
                 v.Impegnato = true;
 
                 cn.AddNoleggi(n);

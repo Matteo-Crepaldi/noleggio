@@ -1,7 +1,7 @@
 ﻿using noleggio_DLL;
 using System;
-using System.Windows.Forms;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace noleggio
 {
@@ -40,7 +40,7 @@ namespace noleggio
                 try { cn.Noleggi.First(n => n.veicolo.Targa == v.Targa); }
                 catch { noleggiato = false; }
 
-                if(noleggiato == false) lstListaDeiVeicoli.Items.Add(v.GetInfo());
+                if (noleggiato == false) lstListaDeiVeicoli.Items.Add(v.GetInfo());
             }
 
             foreach (Noleggio n in cn.Noleggi) lstNoleggiEffettuati.Items.Add(n.GetInfo());
@@ -58,7 +58,7 @@ namespace noleggio
             c = new Cliente(selected_indexC);
             v = new Veicolo(selected_indexV);
 
-            if (selected_indexV == -1 || selected_indexC == -1) MessageBox.Show("Selezionare un veicolo dalla lista veicoli");
+            if (selected_indexV == -1 || selected_indexC == -1) MessageBox.Show("Selezionare un cliente dalla lista dei clienti e un veicolo dalla lista veicoli");
             else
             {
                 v = cn.Veicoli[selected_indexV];
@@ -94,6 +94,26 @@ namespace noleggio
 
                 fdm.ShowDialog();
             }
+        }
+
+        private void btnCalcolaTotali_Click(object sender, EventArgs e)
+        {
+            FormTotali ft = new FormTotali(cn);
+
+            ft.ShowDialog();
+        }
+
+        private void FormCentroNoleggio_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRimuoviNoleggio_Click(object sender, EventArgs e)
+        {
+            int selezionaNol;
+
+            selezionaNol = lstNoleggiEffettuati.SelectedIndex;
+            lstNoleggiEffettuati.Items.RemoveAt(selezionaNol);
         }
     }
 }

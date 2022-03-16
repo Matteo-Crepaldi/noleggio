@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace noleggio_DLL
 {
@@ -32,7 +31,7 @@ namespace noleggio_DLL
             return Impegnato;
         }
 
-        public void AddNolV(Noleggio n)
+        public virtual void AddNolV(Noleggio n)
         {
             NoleggiVeicoli.Add(n);
         }
@@ -54,6 +53,11 @@ namespace noleggio_DLL
         {
             return $"{Targa};{Modello};{Tariffa};{NumPosti}";
         }
+
+        public override void AddNolV(Noleggio n)
+        {
+            base.AddNolV(n);
+        }
     }
 
     public class Furgone : Veicolo
@@ -69,6 +73,11 @@ namespace noleggio_DLL
         public override string GetInfo()
         {
             return $"{Targa};{Modello};{Tariffa};{Capacita}";
+        }
+
+        public override void AddNolV(Noleggio n)
+        {
+            base.AddNolV(n);
         }
     }
 }

@@ -45,9 +45,9 @@ namespace noleggio
             this.lblNomeCliente.BackColor = System.Drawing.Color.Gray;
             this.lblNomeCliente.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNomeCliente.ForeColor = System.Drawing.Color.White;
-            this.lblNomeCliente.Location = new System.Drawing.Point(72, 23);
+            this.lblNomeCliente.Location = new System.Drawing.Point(73, 31);
             this.lblNomeCliente.Name = "lblNomeCliente";
-            this.lblNomeCliente.Size = new System.Drawing.Size(75, 30);
+            this.lblNomeCliente.Size = new System.Drawing.Size(97, 38);
             this.lblNomeCliente.TabIndex = 1;
             this.lblNomeCliente.Text = "Nome";
             // 
@@ -57,9 +57,9 @@ namespace noleggio
             this.lblCognomeUtente.BackColor = System.Drawing.Color.Gray;
             this.lblCognomeUtente.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCognomeUtente.ForeColor = System.Drawing.Color.White;
-            this.lblCognomeUtente.Location = new System.Drawing.Point(72, 126);
+            this.lblCognomeUtente.Location = new System.Drawing.Point(73, 167);
             this.lblCognomeUtente.Name = "lblCognomeUtente";
-            this.lblCognomeUtente.Size = new System.Drawing.Size(112, 30);
+            this.lblCognomeUtente.Size = new System.Drawing.Size(143, 38);
             this.lblCognomeUtente.TabIndex = 2;
             this.lblCognomeUtente.Text = "Cognome";
             // 
@@ -69,47 +69,43 @@ namespace noleggio
             this.lblCodiceFiscaleUtente.BackColor = System.Drawing.Color.Gray;
             this.lblCodiceFiscaleUtente.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCodiceFiscaleUtente.ForeColor = System.Drawing.Color.White;
-            this.lblCodiceFiscaleUtente.Location = new System.Drawing.Point(72, 238);
+            this.lblCodiceFiscaleUtente.Location = new System.Drawing.Point(73, 311);
             this.lblCodiceFiscaleUtente.Name = "lblCodiceFiscaleUtente";
-            this.lblCodiceFiscaleUtente.Size = new System.Drawing.Size(157, 30);
+            this.lblCodiceFiscaleUtente.Size = new System.Drawing.Size(198, 38);
             this.lblCodiceFiscaleUtente.TabIndex = 3;
             this.lblCodiceFiscaleUtente.Text = "Codice Fiscale";
             // 
             // txtNomeC
             // 
             this.txtNomeC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtNomeC.Location = new System.Drawing.Point(72, 63);
-            this.txtNomeC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNomeC.Location = new System.Drawing.Point(73, 82);
             this.txtNomeC.Name = "txtNomeC";
-            this.txtNomeC.Size = new System.Drawing.Size(174, 29);
+            this.txtNomeC.Size = new System.Drawing.Size(198, 34);
             this.txtNomeC.TabIndex = 4;
             // 
             // txtCognomeC
             // 
             this.txtCognomeC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtCognomeC.Location = new System.Drawing.Point(72, 166);
-            this.txtCognomeC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCognomeC.Location = new System.Drawing.Point(73, 220);
             this.txtCognomeC.Name = "txtCognomeC";
-            this.txtCognomeC.Size = new System.Drawing.Size(174, 29);
+            this.txtCognomeC.Size = new System.Drawing.Size(198, 34);
             this.txtCognomeC.TabIndex = 5;
             // 
             // txtCodiceFiscaleC
             // 
             this.txtCodiceFiscaleC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtCodiceFiscaleC.Location = new System.Drawing.Point(72, 280);
-            this.txtCodiceFiscaleC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCodiceFiscaleC.Location = new System.Drawing.Point(73, 371);
             this.txtCodiceFiscaleC.Name = "txtCodiceFiscaleC";
-            this.txtCodiceFiscaleC.Size = new System.Drawing.Size(174, 29);
+            this.txtCodiceFiscaleC.Size = new System.Drawing.Size(198, 34);
             this.txtCodiceFiscaleC.TabIndex = 6;
             // 
             // btnSalvaCliente
             // 
             this.btnSalvaCliente.BackColor = System.Drawing.Color.White;
             this.btnSalvaCliente.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSalvaCliente.Location = new System.Drawing.Point(12, 366);
-            this.btnSalvaCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSalvaCliente.Location = new System.Drawing.Point(14, 488);
             this.btnSalvaCliente.Name = "btnSalvaCliente";
-            this.btnSalvaCliente.Size = new System.Drawing.Size(115, 46);
+            this.btnSalvaCliente.Size = new System.Drawing.Size(131, 61);
             this.btnSalvaCliente.TabIndex = 7;
             this.btnSalvaCliente.Text = "Salva";
             this.btnSalvaCliente.UseVisualStyleBackColor = false;
@@ -119,10 +115,9 @@ namespace noleggio
             // 
             this.btnAnnullaCliente.BackColor = System.Drawing.Color.White;
             this.btnAnnullaCliente.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAnnullaCliente.Location = new System.Drawing.Point(170, 366);
-            this.btnAnnullaCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAnnullaCliente.Location = new System.Drawing.Point(194, 488);
             this.btnAnnullaCliente.Name = "btnAnnullaCliente";
-            this.btnAnnullaCliente.Size = new System.Drawing.Size(115, 46);
+            this.btnAnnullaCliente.Size = new System.Drawing.Size(131, 61);
             this.btnAnnullaCliente.TabIndex = 8;
             this.btnAnnullaCliente.Text = "Annulla";
             this.btnAnnullaCliente.UseVisualStyleBackColor = false;
@@ -130,10 +125,10 @@ namespace noleggio
             // 
             // FormCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(297, 437);
+            this.ClientSize = new System.Drawing.Size(339, 583);
             this.Controls.Add(this.btnAnnullaCliente);
             this.Controls.Add(this.btnSalvaCliente);
             this.Controls.Add(this.txtCodiceFiscaleC);
@@ -142,7 +137,6 @@ namespace noleggio
             this.Controls.Add(this.lblCodiceFiscaleUtente);
             this.Controls.Add(this.lblCognomeUtente);
             this.Controls.Add(this.lblNomeCliente);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormCliente";
             this.Text = "Cliente";
             this.ResumeLayout(false);

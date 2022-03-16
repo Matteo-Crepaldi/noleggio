@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
-using System;
 
 namespace noleggio_DLL
 {
@@ -99,7 +99,7 @@ namespace noleggio_DLL
 
                 args = infoNoleggio.Split(';');
 
-                if(args.Length > 1)
+                if (args.Length > 1)
                 {
                     dataInizio = DateTime.Parse(args[0]);
                     dataFine = DateTime.Parse(args[1]);
@@ -134,6 +134,20 @@ namespace noleggio_DLL
         public void AddNoleggi(Noleggio n)
         {
             Noleggi.Add(n);
+        }
+
+        public Veicolo CercaVeicolo(string Targa)
+        {
+            Veicolo v = null;
+            foreach (var item in Veicoli)
+            {
+                if (item.Targa == Targa)
+                {
+                    v = item;
+                }
+            }
+
+            return v;
         }
     }
 }
