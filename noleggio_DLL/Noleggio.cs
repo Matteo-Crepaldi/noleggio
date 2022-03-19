@@ -49,7 +49,7 @@ namespace noleggio_DLL
 
         public double CostoVeicoloNoleggiato(Veicolo v)
         {
-            NumGiorni = Convert.ToInt32((DataFine - DataInizio).Days);
+            NumGiorni = Convert.ToInt32((DataFine - DataInizio).Days) + 1;
 
             Costo = Convert.ToDouble(NumGiorni) * v.Tariffa;
 

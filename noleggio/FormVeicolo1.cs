@@ -1,6 +1,7 @@
 ﻿using noleggio_DLL;
 using System;
 using System.Windows.Forms;
+using System.IO;
 
 namespace noleggio
 {
@@ -64,7 +65,10 @@ namespace noleggio
                             else
                             {
                                 MessageBox.Show("Automobile creata con successo");
-                                a.Tipo = "Automobile";
+                                a.Tipo = "automobile";
+
+                                SalvaDati(a);
+
                                 this.Close();
                             }
                         }
@@ -92,7 +96,10 @@ namespace noleggio
                             else
                             {
                                 MessageBox.Show("Furgone creato con successo");
-                                f.Tipo = "Furgone";
+                                f.Tipo = "furgone";
+
+                                SalvaDati(f);
+
                                 this.Close();
                             }
                         }
@@ -126,6 +133,13 @@ namespace noleggio
                 lblCapacitàFurgone.Visible = true;
                 txtCapacitàF.Visible = true;
             }
+        }
+
+        private void SalvaDati(Veicolo v)
+        {
+            StreamWriter st = File.AppendText(cn.GetPath() + "\\veicoli.csv");
+            st.WriteLine(v.GetData());
+            st.Close();
         }
 
         private void btnAnnullaVeicolo_Click(object sender, EventArgs e)

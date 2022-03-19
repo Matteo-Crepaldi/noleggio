@@ -140,7 +140,7 @@ namespace noleggio_DLL
 
             for(int K = 0; K < args.Length; K++)
             {
-                if(K != index) outstring += args[K] + "\n";
+                if(K != index && args[K] != "\n" && args[K] != "") outstring += args[K] + "\n";
             }
 
             StreamWriter sr = new StreamWriter(path + file);

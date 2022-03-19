@@ -16,6 +16,7 @@ namespace noleggio
             this.cn = cn;
             this.v = v;
             this.c = c;
+
             InitializeComponent();
         }
 
@@ -30,7 +31,6 @@ namespace noleggio
             DateTime dI;
             DateTime dF;
 
-            //dI = Convert.ToDateTime(txtInizioNoleggio.Text);
             dI = dtpDataInizioNol.Value;
             dF = dtpDataFineNol.Value;
 
@@ -38,10 +38,10 @@ namespace noleggio
             {
                 MessageBox.Show("La data è passata");
             }
+            else if (dI.CompareTo(dF) >= 0) MessageBox.Show("La seconda data deve essere successiva alla prima");
             else
             {
                 n = new Noleggio(dtpDataInizioNol.Value, dtpDataFineNol.Value, cn.Veicoli, cn.Clienti, cn.Noleggi, v.Targa, c.CodiceFiscale);
-                v.Impegnato = true;
 
                 cn.AddNoleggi(n);
                 v.AddNolV(n);

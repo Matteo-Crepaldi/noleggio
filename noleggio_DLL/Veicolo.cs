@@ -8,7 +8,6 @@ namespace noleggio_DLL
         public string Modello { get; }
         public string Tipo { get; set; }
         public double Tariffa { get; }
-        public bool Impegnato { get; set; }
         public List<Noleggio> NoleggiVeicoli { get; set; }
         public int IndiceSel { get; set; }
 
@@ -17,7 +16,6 @@ namespace noleggio_DLL
             Targa = targa;
             Modello = modello;
             Tariffa = tariffa;
-            Impegnato = false;
             NoleggiVeicoli = new List<Noleggio>();
         }
 
@@ -26,17 +24,14 @@ namespace noleggio_DLL
             this.IndiceSel = IndiceSel;
         }
 
-        public bool GetStatus()
-        {
-            return Impegnato;
-        }
-
         public virtual void AddNolV(Noleggio n)
         {
             NoleggiVeicoli.Add(n);
         }
 
         public virtual string GetInfo() { return ""; }
+
+        public virtual string GetData() { return ""; }
     }
 
     public class Automobile : Veicolo
@@ -52,6 +47,11 @@ namespace noleggio_DLL
         public override string GetInfo()
         {
             return $"{Targa};{Modello};{Tariffa};{NumPosti}";
+        }
+
+        public override string GetData()
+        {
+            return $"{Targa};{Modello};{Tariffa};{NumPosti};{Tipo};";
         }
 
         public override void AddNolV(Noleggio n)
@@ -73,6 +73,11 @@ namespace noleggio_DLL
         public override string GetInfo()
         {
             return $"{Targa};{Modello};{Tariffa};{Capacita}";
+        }
+
+        public override string GetData()
+        {
+            return $"{Targa};{Modello};{Tariffa};{Capacita};{Tipo};";
         }
 
         public override void AddNolV(Noleggio n)
