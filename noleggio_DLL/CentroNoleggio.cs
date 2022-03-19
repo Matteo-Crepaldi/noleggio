@@ -112,6 +112,42 @@ namespace noleggio_DLL
             }
         }
 
+        public void RimuoviVeicolo(int index)
+        {
+            Veicoli.RemoveAt(index);
+            ModificaFile(index, "\\veicoli.csv");
+        }
+
+        public void RimuoviCliente(int index)
+        {
+            Clienti.RemoveAt(index);
+            ModificaFile(index, "\\clienti.csv");
+        }
+
+        public void RimuoviNoleggio(int index)
+        {
+            Noleggi.RemoveAt(index);
+            ModificaFile(index, "\\noleggi.csv");
+        }
+
+        private void ModificaFile(int index, string file)
+        {
+            string fileContent, path = GetPath(), outstring = "";
+            string[] args;
+
+            fileContent = File.ReadAllText(path + file);
+            args = fileContent.Split('\n');
+
+            for(int K = 0; K < args.Length; K++)
+            {
+                if(K != index) outstring += args[K] + "\n";
+            }
+
+            StreamWriter sr = new StreamWriter(path + file);
+            sr.Write(outstring);
+            sr.Close();
+        }
+
         public bool AddVeicolo(Veicolo v)
         {
             bool ripetuto = false;
