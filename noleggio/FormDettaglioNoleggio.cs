@@ -21,7 +21,6 @@ namespace noleggio
             lblModelloVeicolo.Text = n.veicolo.Modello;
             lblTariffaVeicolo.Text = n.veicolo.Tariffa.ToString();
             lblTipoVeicolo.Text = n.veicolo.Tipo;
-            lblImpegnatoVeicolo.Text = n.veicolo.Impegnato.ToString();
         }
 
         private void btnChiudiFD_Click(object sender, System.EventArgs e)
